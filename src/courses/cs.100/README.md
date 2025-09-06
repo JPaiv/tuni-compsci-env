@@ -1,37 +1,53 @@
-# COMP.CS.100
+# 👨‍💻 COMP.CS.100
 
 This folder was made as the starting for the first course in Tuni computer science.
 
-## How to start
+## 🎯 How to start
 
-1. Open the terminal by selecting:
+1. Open the terminal
 
-   - View > Terminal from the menu bar
-   - Pressing the Ctrl+` keyboard shortcut.
+   - Selec "Terminal" from the upper left menu bar
 
-2. Navigate to this folder.
+2. Copy-paste following command to your terminal:
 
    ```
    cd src/courses/cs.100
    ```
 
-3. Start virtual environment with following command:
+   The prompt navigates your terminal to this folder.
+
+   cd means "change directory." This allows you to navigate the file system.
+
+3. Install Python virtual environment
+
+   ```
+   python3 -m venv venv
+   ```
+
+4. Activate Python virtual environment
 
    ```
    source venv/bin/activate
    ```
 
-4. Install Python depencies:
+5. Install Python depencies
 
    ```
-   pip3 install -r requirements.txt
+   source venv/bin/activate
    ```
 
-5. Execute the script with following command:
+6. Execute the script
+
    ```
    python3 main.py
    ```
 
-## What is a virtual environment?
+## 🌐 What is a virtual environment?
 
 An isolated environment to prevent conflicts. It allows managing depencies separately from different projects.
+
+Using a virtual env is a recommended practice in Python coding.
+
+## 📄 Requirements
+
+The requiremens.txt file contains Python depencies. In this case, it's the [Black-formatter](https://github.com/psf/black).
