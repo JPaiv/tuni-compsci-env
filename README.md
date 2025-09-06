@@ -6,20 +6,23 @@ All tools are preinstalled
 
 ## 🚀 Features
 
-Preconfigured VS Code Devcontainer (.devcontainer/devcontainer.json)
+Preconfigured VS Code Devcontainer
 
-Includes common tools, formatters, etc
+Includes:
 
-Ubuntu 24 devcontainer that works on all operating systems
+- Common tools
+- Formatters
+- Ubuntu 24 devcontainer
 
 ## 📦 Requirements
 
 Before starting, install:
 
 Docker Desktop
-[Linux](https://docs.docker.com/desktop/setup/install/linux/)
-[Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
-[Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+
+- [Linux](https://docs.docker.com/desktop/setup/install/linux/)
+- [Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
+- [Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
 [Visual Studio Code](https://code.visualstudio.com/download)
 
@@ -27,12 +30,14 @@ Docker Desktop
 
 Github has good [docs](https://docs.github.com/en/get-started/git-basics/set-up-git)
 
+Windows users should test [Github Desktop](https://desktop.github.com/download/)
+
 ## 🛠️ Setup Instructions
 
 1. Clone the repository
 
-2. Open in VS Code
+2. Open the project folder in VS Code.
 
-Open the project folder in VS Code.
-When prompted, select “Reopen in Container”.
-VS Code and Docker will handle the rest
+3. When prompted, select “Reopen in Container”.
+
+4. VS Code and Docker will handle the rest
