@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         ".devcontainer",
-        "src/courses"
+        "src/courses",
+        "workflows"
     ]
 }
