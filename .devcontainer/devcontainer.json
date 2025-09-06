@@ -1,0 +1,131 @@
+{
+    "name": "TuniDevEnv",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {}
+    },
+    "postStartCommand": "post-start",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                // Controls if quick suggestions should show up while typing
+                "editor.quickSuggestions": {
+                    "other": true,
+                    "comments": false,
+                    "strings": false
+                },
+                // Makes VS Code Intergrated terminal to inherit local machine shell environment
+                "terminal.integrated.inheritEnv": true,
+                // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.
+                "editor.acceptSuggestionOnCommitCharacter": true,
+                // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions. The value 'smart' means only accept a suggestion with Enter when it makes a textual change
+                "editor.acceptSuggestionOnEnter": "on",
+                // Controls the delay in ms after which quick suggestions will show up.
+                "editor.quickSuggestionsDelay": 10,
+                // Controls if suggestions should automatically show up when typing trigger characters
+                "editor.suggestOnTriggerCharacters": true,
+                // Controls if pressing tab inserts the best suggestion and if tab cycles through other suggestions
+                "editor.tabCompletion": "off",
+                // Controls whether sorting favours words that appear close to the cursor
+                "editor.suggest.localityBonus": true,
+                // Controls how suggestions are pre-selected when showing the suggest list
+                "editor.suggestSelection": "first",
+                // Enable word based suggestions
+                "editor.wordBasedSuggestions": "matchingDocuments",
+                // Enable parameter hints
+                "editor.parameterHints.enabled": true,
+                // Nicer default VS Code integrated terminal colors
+                "workbench.colorCustomizations": {
+                    "terminal.ansiBlack": "#000000",
+                    "terminal.ansiBlue": "#6FB3D2",
+                    "terminal.ansiBrightBlack": "#B0B0B0",
+                    "terminal.ansiBrightBlue": "#6FB3D2",
+                    "terminal.ansiBrightCyan": "#76C7B7",
+                    "terminal.ansiBrightGreen": "#A1C659",
+                    "terminal.ansiBrightMagenta": "#D381C3",
+                    "terminal.ansiBrightRed": "#FB0120",
+                    "terminal.ansiBrightWhite": "#FFFFFF",
+                    "terminal.ansiBrightYellow": "#FDA331",
+                    "terminal.ansiCyan": "#76C7B7",
+                    "terminal.ansiGreen": "#A1C659",
+                    "terminal.ansiMagenta": "#D381C3",
+                    "terminal.ansiRed": "#FB0120",
+                    "terminal.ansiWhite": "#E0E0E0",
+                    "terminal.ansiYellow": "#FDA331",
+                    "terminal.background": "#000000",
+                    "terminal.foreground": "#E0E0E0",
+                    "terminalCursor.background": "#E0E0E0",
+                    "terminalCursor.foreground": "#E0E0E0"
+                },
+                // Disable Git emojis for VS Code Conventional Commit extension
+                "conventionalCommits.gitmoji": false
+            },
+            "[go]": {
+                "editor.defaultFormatter": "golang.Go",
+                "editor.formatOnSave": true
+            },
+            "[json]": {
+                "editor.defaultFormatter": "ZainChen.json",
+                "editor.formatOnSave": true
+            },
+            "[jsonc]": {
+                "editor.defaultFormatter": "ZainChen.json",
+                "editor.formatOnSave": true
+            },
+            "[python]": {
+                "editor.defaultFormatter": "ms-python.black-formatter",
+                "editor.formatOnSave": true
+            },
+            "[yaml": {
+                "editor.defaultFormatter": "redhat.vscode-yaml",
+                "editor.formatOnSave": true
+            },
+            "[shellscript]": {
+                "editor.tabSize": 3,
+                "editor.defaultFormatter": "foxundermoon.shell-format"
+            },
+            "[cpp]": {
+                "editor.tabSize": 3,
+                "editor.defaultFormatter": "ms-vscode.cpptools"
+            },
+            "[javscript]": {
+                "editor.tabSize": 3,
+                "editor.defaultFormatter": "esbenp.prettier-vscode"
+            },
+            "[makefile]": {
+                "editor.tabSize": 3,
+                "editor.defaultFormatter": "ms-vscode.makefile-tools"
+            },
+            "[toml]": {
+                "editor.tabSize": 3,
+                "editor.defaultFormatter": "tamasfe.even-better-toml"
+            },
+            "extensions": [
+                "Tyriar.sort-lines",
+                "aws-scripting-guy.cform",
+                "eamodio.gitlens",
+                "equinusocio.vsc-material-theme",
+                "equinusocio.vsc-material-theme-icons",
+                "esbenp.prettier-vscode",
+                "foxundermoon.shell-format",
+                "golang.Go",
+                "ms-azuretools.vscode-docker",
+                "ms-python.black-formatter",
+                "ms-python.python",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.makefile-tools",
+                "njpwerner.autodocstring",
+                "redhat.vscode-yaml",
+                "shardulm94.trailing-spaces",
+                "tamasfe.even-better-toml",
+                "teabyii.ayu",
+                "vivaxy.vscode-conventional-commits"
+            ]
+        }
+    },
+    "features": {},
+    "mounts": [],
+    "containerEnv": {}
+}
