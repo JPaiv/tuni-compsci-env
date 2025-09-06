@@ -25,15 +25,21 @@ COPY --chmod=765 --from=go-builder /usr/local/go /usr/local/go
 # Devcontainer post start script
 COPY post-start.sh /usr/local/bin/post-start
 
-RUN apt-get update && apt-get install -y \
+ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:${PATH}"
+
+# DEPENCIES
+# Python3
+# C++
+# Common utils
+RUN apt-get update \
+    && apt-get install -y \
     python3 \
     python3-pip \
     python3-venv \
     clang \
     cmake \
-    gdb
-
-ENV PATH="/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin"
+    gdb \
+    apache2-utils
 
 # Helsinki time zone
 ENV TZ="Europe/Helsinki"
