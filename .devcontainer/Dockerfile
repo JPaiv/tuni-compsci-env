@@ -22,9 +22,6 @@ COPY --chmod=765 --from=node-builder /usr/local/lib/node_modules /usr/local/lib/
 # Golang
 COPY --chmod=765 --from=go-builder /usr/local/go /usr/local/go
 
-# Python formatter requirements
-COPY --chmod=765 requirements.txt ./
-
 # Devcontainer post start script
 COPY post-start.sh /usr/local/bin/post-start
 
