@@ -8,28 +8,24 @@ All tools are preinstalled
 
 Preconfigured VS Code Devcontainer (.devcontainer/devcontainer.json)
 
-Includes common CS tools:
+Includes common tools, formatters, etc
 
-Python 3 + pip
-
-Git + curl + build tools
-
-Node.js (optional)
-
-C++ compiler and debugger
-
-Extendable via Dockerfile
+Ubuntu 22 devcontainer that works on all operating systems
 
 ## 📦 Requirements
 
 Before starting, install:
 
 Docker Desktop
-    [Linux](https://docs.docker.com/desktop/setup/install/linux/)
-    [Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
-    [Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+[Linux](https://docs.docker.com/desktop/setup/install/linux/)
+[Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
+[Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
 [Visual Studio Code](https://code.visualstudio.com/download)
+
+## 🛠️ Git Setup
+
+Github has good [docs](https://docs.github.com/en/get-started/git-basics/set-up-git)
 
 ## 🛠️ Setup Instructions
 
@@ -39,17 +35,4 @@ Docker Desktop
 
 Open the project folder in VS Code.
 When prompted, select “Reopen in Container”.
-VS Code will build the container using the included Dockerfile.
-
-## 🧑‍💻 Usage
-
-Inside the devcontainer, you can:
-
-# Python
-python3 main.py
-
-# C++
-g++ hello.cpp -o hello && ./hello
-
-# Node.js
-node index.js
+VS Code and Docker will handle the rest
