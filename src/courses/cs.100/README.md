@@ -19,7 +19,12 @@ This folder was made as the starting for the first course in Tuni computer scien
    source venv/bin/activate
    '''
 
-4. Execute the script with following command:
+4. Install Python depencies:
+   '''
+   pip3 install -r requirements.txt
+   '''
+
+5. Execute the script with following command:
    '''
    python3 main.py
    '''
