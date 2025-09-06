@@ -10,7 +10,7 @@ Preconfigured VS Code Devcontainer (.devcontainer/devcontainer.json)
 
 Includes common tools, formatters, etc
 
-Ubuntu 22 devcontainer that works on all operating systems
+Ubuntu 24 devcontainer that works on all operating systems
 
 ## 📦 Requirements
 
