@@ -10,24 +10,27 @@ This folder was made as the starting for the first course in Tuni computer scien
    - Pressing the Ctrl+` keyboard shortcut.
 
 2. Navigate to this folder.
-   '''
+
+   ```
    cd src/courses/cs.100
-   '''
+   ```
 
 3. Start virtual environment with following command:
-   '''
+
+   ```
    source venv/bin/activate
-   '''
+   ```
 
 4. Install Python depencies:
-   '''
+
+   ```
    pip3 install -r requirements.txt
-   '''
+   ```
 
 5. Execute the script with following command:
-   '''
+   ```
    python3 main.py
-   '''
+   ```
 
 ## What is a virtual environment?
 
