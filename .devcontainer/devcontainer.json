@@ -112,6 +112,8 @@
                 "foxundermoon.shell-format",
                 "golang.Go",
                 "ms-azuretools.vscode-docker",
+                "ms-dotnettools.csdevkit",
+                "ms-dotnettools.csharp",
                 "ms-python.black-formatter",
                 "ms-python.python",
                 "ms-vscode.cmake-tools",
@@ -123,7 +125,7 @@
                 "shardulm94.trailing-spaces",
                 "tamasfe.even-better-toml",
                 "vivaxy.vscode-conventional-commits",
-                "zaaack.markdown-editor"
+                "yzhang.markdown-all-in-one"
             ]
         }
     },
