@@ -11,7 +11,10 @@ FROM golang:1.25 AS go-builder
 # Verify Go
 RUN echo "Golang Version:" && go version
 
-# ---------- Stage 3/3: Runtime devcontainer ----------
+# ---------- Stage 3/4: .NET Builder ----------
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dotnet-builder
+
+# ---------- Stage 4/4: Runtime devcontainer ----------
 FROM mcr.microsoft.com/devcontainers/base:ubuntu AS runtime
 
 # Node
@@ -20,6 +23,9 @@ COPY --chmod=765 --from=node-builder /usr/local/lib/node_modules /usr/local/lib/
 
 # Go
 COPY --chmod=765 --from=go-builder /usr/local/go /usr/local/go
+
+# .NET SDK
+COPY --chmod=765 --from=dotnet-builder /usr/share/dotnet /usr/share/dotnet
 
 # Devcontainer post start script
 COPY --chmod=765 post-start.sh /usr/local/bin/post-start
