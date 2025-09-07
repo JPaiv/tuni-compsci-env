@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.0.0...v1.1.0) (2025-09-07)
+
+
+### Features
+
+* **.devcontainer:** Add .NET SDK 8.0 ([6e3018d](https://github.com/JPaiv/tuni-compsci-env/commit/6e3018d93a40b0ccdd5962f07bcbeedc330f5629))
+* **.devcontainer:** Add C# related extensions ([9dbad7a](https://github.com/JPaiv/tuni-compsci-env/commit/9dbad7a2ca9d5f88d4bbe150b522961e7c466f8a))
+* **.devcontainer:** Add default formatter configs ([e2aa36c](https://github.com/JPaiv/tuni-compsci-env/commit/e2aa36cdbbb62db062d5e366e79775fd0378b4ce))
+* **.devcontainer:** Add dotnet to PATH ([023891f](https://github.com/JPaiv/tuni-compsci-env/commit/023891f0463b968350e241ed8e682c178ccfac46))
+* **.devcontainer:** Install C++ ([511e896](https://github.com/JPaiv/tuni-compsci-env/commit/511e89667a2ee8714c8b3ef58297ad9995612182))
+
 ## 1.0.0 (2025-09-06)
 
 
