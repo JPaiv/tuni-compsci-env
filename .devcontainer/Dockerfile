@@ -36,15 +36,13 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/loca
 # Python3
 # C++
 # Common utils
-RUN apt-get update \
-    && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
-    python3-venv \
-    clang \
-    cmake \
-    gdb \
-    apache2-utils
+    python3-venv  \
+    build-essential \
+    apache2-utils \
+    && rm -rf /var/lib/apt/lists/*
 
 # Helsinki time zone
 ENV TZ="Europe/Helsinki"
