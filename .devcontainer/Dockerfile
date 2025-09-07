@@ -1,11 +1,11 @@
-# ---------- Stage 1/3: Javascript builder ----------
+# ---------- Stage 1/4: Javascript builder ----------
 FROM node:24.5.0 AS node-builder
 
 # Verify Javascript
 RUN echo "NODE Version:" && node --version
 RUN echo "NPM Version:" && npm --version
 
-# ---------- Stage 2/3: Go builder ----------
+# ---------- Stage 2/4: Go builder ----------
 FROM golang:1.25 AS go-builder
 
 # Verify Go
