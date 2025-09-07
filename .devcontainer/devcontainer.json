@@ -60,9 +60,21 @@
                 // Disable Git emojis for VS Code Conventional Commit extension
                 "conventionalCommits.gitmoji": false
             },
+            "[cpp]": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "ms-vscode.cpptools"
+            },
+            "[csharp]": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "ms-dotnettools.csharp"
+            },
             "[go]": {
                 "editor.defaultFormatter": "golang.Go",
                 "editor.formatOnSave": true
+            },
+            "[javascript]": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode"
             },
             "[json]": {
                 "editor.defaultFormatter": "ZainChen.json",
@@ -72,46 +84,35 @@
                 "editor.defaultFormatter": "ZainChen.json",
                 "editor.formatOnSave": true
             },
-            "[python]": {
-                "editor.defaultFormatter": "ms-python.black-formatter",
-                "editor.formatOnSave": true
+            "[makefile]": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "ms-vscode.makefile-tools"
             },
-            "[yaml": {
-                "editor.defaultFormatter": "redhat.vscode-yaml",
-                "editor.formatOnSave": true
+            "[markdown]": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "yzhang.markdown-all-in-one"
             },
             "[shellscript]": {
                 "editor.formatOnSave": true,
                 "editor.defaultFormatter": "foxundermoon.shell-format"
             },
-            "[cpp]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "ms-vscode.cpptools"
-            },
-            "[javscript]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "esbenp.prettier-vscode"
-            },
-            "[makefile]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "ms-vscode.makefile-tools"
-            },
             "[toml]": {
                 "editor.formatOnSave": true,
                 "editor.defaultFormatter": "tamasfe.even-better-toml"
             },
-            "[markdown]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "tamasfe.even-better-toml"
+            "[yaml]": {
+                "editor.defaultFormatter": "redhat.vscode-yaml",
+                "editor.formatOnSave": true
             },
             "extensions": [
                 "Tyriar.sort-lines",
-                "aws-scripting-guy.cform",
                 "eamodio.gitlens",
                 "esbenp.prettier-vscode",
                 "foxundermoon.shell-format",
                 "golang.Go",
                 "ms-azuretools.vscode-docker",
+                "ms-dotnettools.csdevkit",
+                "ms-dotnettools.csharp",
                 "ms-python.black-formatter",
                 "ms-python.python",
                 "ms-vscode.cmake-tools",
@@ -123,7 +124,7 @@
                 "shardulm94.trailing-spaces",
                 "tamasfe.even-better-toml",
                 "vivaxy.vscode-conventional-commits",
-                "zaaack.markdown-editor"
+                "yzhang.markdown-all-in-one"
             ]
         }
     },
