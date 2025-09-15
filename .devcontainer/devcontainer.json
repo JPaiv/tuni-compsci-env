@@ -1,5 +1,5 @@
 {
-    "name": "TuniDevEnv",
+    "name": "Tuni",
     "build": {
         "dockerfile": "Dockerfile",
         "args": {}
