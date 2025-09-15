@@ -124,6 +124,8 @@
                 "esbenp.prettier-vscode",
                 "foxundermoon.shell-format",
                 "hashicorp.terraform",
+                "haskell.haskell",
+                "justusadam.language-haskell",
                 "ms-azuretools.vscode-docker",
                 "ms-python.black-formatter",
                 "ms-python.flake8",
