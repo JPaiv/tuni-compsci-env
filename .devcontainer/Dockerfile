@@ -1,9 +1,17 @@
 # ---------- Stage 1/4: Javascript builder ----------
 FROM node:24.5.0 AS node-builder
 
-# Verify Javascript
-RUN echo "NODE Version:" && node --version
-RUN echo "NPM Version:" && npm --version
+# Typescript
+# TSX
+# Zig
+# Tools
+RUN npm install -g \
+    typescript \
+    typescript ts-node \
+    @types/node \
+    tsx  \
+    @ziglang/cli \
+    eslint
 
 # ---------- Stage 2/4: Go builder ----------
 FROM golang:1.25 AS go-builder
