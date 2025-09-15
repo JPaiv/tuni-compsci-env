@@ -23,6 +23,7 @@ COPY --chmod=765 --from=node-builder /usr/local/lib/node_modules /usr/local/lib/
 
 # Go
 COPY --chmod=765 --from=go-builder /usr/local/go /usr/local/go
+COPY --chmod=765 --from=go-builder /go/bin /go/bin
 
 # .NET SDK
 COPY --chmod=765 --from=dotnet-builder /usr/share/dotnet /usr/share/dotnet
