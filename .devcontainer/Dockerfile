@@ -46,3 +46,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Helsinki time zone
 ENV TZ="Europe/Helsinki"
+
+USER vscode
