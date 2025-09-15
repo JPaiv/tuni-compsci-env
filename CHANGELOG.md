@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.1.0...v1.2.0) (2025-09-15)
+
+
+### Features
+
+* **.devcontainer:** Add Docker user ([1bccb53](https://github.com/JPaiv/tuni-compsci-env/commit/1bccb530bb520df782701cb8c56905717c560919))
+* **.devcontainer:** Add Golang linter and debugger ([a0e0165](https://github.com/JPaiv/tuni-compsci-env/commit/a0e0165cb6116edfbeedd75f5128773944ad8efb))
+* **.devcontainer:** Add Golang to path ([8d8f73e](https://github.com/JPaiv/tuni-compsci-env/commit/8d8f73e9a57a0a83e4da864ddcc1394bfca247e1))
+* **.devcontainer:** Add remote user and terminal config ([dd7f883](https://github.com/JPaiv/tuni-compsci-env/commit/dd7f8834156fa413cb5b808f42883f35c91084e9))
+* **.devcontainer:** Add useful bash tools ([39957ba](https://github.com/JPaiv/tuni-compsci-env/commit/39957bab48a2d2661cdc1fa88effc3c8525c1236))
+* **.devcontainer:** Copy Golang depency binaries ([9e37c44](https://github.com/JPaiv/tuni-compsci-env/commit/9e37c440b9e703a868ff2c50b31df1cececf6b5b))
+* **.devcontainer:** Install typescript and other tools ([10f190b](https://github.com/JPaiv/tuni-compsci-env/commit/10f190b953254f8c993b447af25f8c7ba06f6908))
+
 ## [1.1.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.0.0...v1.1.0) (2025-09-07)
 
 
