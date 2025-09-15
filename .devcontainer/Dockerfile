@@ -40,21 +40,27 @@ COPY --chmod=765 --from=dotnet-builder /usr/share/dotnet /usr/share/dotnet
 # Devcontainer post start script
 COPY --chmod=765 post-start.sh /usr/local/bin/post-start
 
-ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/go/bin:/usr/local:/usr/share/dotnet"
+ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/go/bin:/usr/local:/usr/share/dotnet:/usr/local/cargo/bin:/root/.cargo/bin"
 
 # DEPENCIES
 # Python3
 # C++
+# Haskell
 # Common utils
+# Rust
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
     python3-venv  \
     build-essential \
+    cabal-install \
+    ghc \
+    haskell-stack \
     apache2-utils \
     bash-completion \
     eza \
     ripgrep \
+    && curl https://sh.rustup.rs -sSf | sh -s -- -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Helsinki time zone

@@ -72,6 +72,10 @@
                 "editor.defaultFormatter": "golang.Go",
                 "editor.formatOnSave": true
             },
+            "[haskell]": {
+                "editor.defaultFormatter": "justusadam.language-haskell",
+                "editor.formatOnSave": true
+            },
             "[javascript]": {
                 "editor.defaultFormatter": "esbenp.prettier-vscode",
                 "editor.formatOnSave": true
@@ -90,6 +94,10 @@
             },
             "[markdown]": {
                 "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+                "editor.formatOnSave": true
+            },
+            "[rust]": {
+                "editor.defaultFormatter": "rust-lang.rust-analyzer",
                 "editor.formatOnSave": true
             },
             "[python]": {
@@ -120,6 +128,8 @@
                 "esbenp.prettier-vscode",
                 "foxundermoon.shell-format",
                 "hashicorp.terraform",
+                "haskell.haskell",
+                "justusadam.language-haskell",
                 "ms-azuretools.vscode-docker",
                 "ms-python.black-formatter",
                 "ms-python.flake8",
@@ -128,6 +138,7 @@
                 "ms-vscode.makefile-tools",
                 "njpwerner.autodocstring",
                 "redhat.vscode-yaml",
+                "rust-lang.rust-analyzer",
                 "shardulm94.trailing-spaces",
                 "tamasfe.even-better-toml",
                 "vivaxy.vscode-conventional-commits",
