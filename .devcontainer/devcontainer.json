@@ -72,6 +72,10 @@
                 "editor.defaultFormatter": "golang.Go",
                 "editor.formatOnSave": true
             },
+            "[haskell]": {
+                "editor.defaultFormatter": "justusadam.language-haskell",
+                "editor.formatOnSave": true
+            },
             "[javascript]": {
                 "editor.defaultFormatter": "esbenp.prettier-vscode",
                 "editor.formatOnSave": true
