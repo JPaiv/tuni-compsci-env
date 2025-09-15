@@ -51,6 +51,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-venv  \
     build-essential \
+    cabal-install \
+    ghc \
+    haskell-stack \
     apache2-utils \
     bash-completion \
     eza \
