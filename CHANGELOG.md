@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.2.0...v1.3.0) (2025-09-15)
+
+
+### Features
+
+* **.devcontainer:** Add Haskell default formatter ([6e938d8](https://github.com/JPaiv/tuni-compsci-env/commit/6e938d8720475005b099e015eccf54f803ee59f9))
+* **.devcontainer:** Add Haskell extensions ([e2ec9b4](https://github.com/JPaiv/tuni-compsci-env/commit/e2ec9b4eaa6761b31fa0bbb702a55e276a49fd71))
+* **.devcontainer:** Add Rust to PATH ([80715e8](https://github.com/JPaiv/tuni-compsci-env/commit/80715e82b505df546dfacd35ea19657057f3a983))
+* **.devcontainer:** Install Haskell ([0b35f3a](https://github.com/JPaiv/tuni-compsci-env/commit/0b35f3aa08c3e95c7bd4498b4864ec832e3c448e))
+* **.devcontainer:** Install Rust ([c88f4de](https://github.com/JPaiv/tuni-compsci-env/commit/c88f4de55b98c310f8588e9c46dc3009e1a91ed0))
+* **.devcontainer:** Install Rust extensions ([97aa0f8](https://github.com/JPaiv/tuni-compsci-env/commit/97aa0f8ce3d47ce26ed3d137101146fa388bc44f))
+
 ## [1.2.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.1.0...v1.2.0) (2025-09-15)
 
 
