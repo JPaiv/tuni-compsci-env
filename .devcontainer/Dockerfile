@@ -45,7 +45,9 @@ ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 # DEPENCIES
 # Python3
 # C++
+# Haskell
 # Common utils
+# Rust
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
@@ -58,6 +60,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     bash-completion \
     eza \
     ripgrep \
+    && curl https://sh.rustup.rs -sSf | sh -s -- -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Helsinki time zone
