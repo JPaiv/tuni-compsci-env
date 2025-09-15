@@ -96,6 +96,10 @@
                 "editor.defaultFormatter": "yzhang.markdown-all-in-one",
                 "editor.formatOnSave": true
             },
+            "[rust]": {
+                "editor.defaultFormatter": "rust-lang.rust-analyzer",
+                "editor.formatOnSave": true
+            },
             "[python]": {
                 "editor.defaultFormatter": "ms-python.flake8",
                 "editor.formatOnSave": true
@@ -134,6 +138,7 @@
                 "ms-vscode.makefile-tools",
                 "njpwerner.autodocstring",
                 "redhat.vscode-yaml",
+                "rust-lang.rust-analyzer",
                 "shardulm94.trailing-spaces",
                 "tamasfe.even-better-toml",
                 "vivaxy.vscode-conventional-commits",
