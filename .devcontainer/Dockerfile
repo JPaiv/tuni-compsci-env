@@ -40,7 +40,7 @@ COPY --chmod=765 --from=dotnet-builder /usr/share/dotnet /usr/share/dotnet
 # Devcontainer post start script
 COPY --chmod=765 post-start.sh /usr/local/bin/post-start
 
-ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/go/bin:/usr/local:/usr/share/dotnet"
+ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/go/bin:/usr/local:/usr/share/dotnet:/usr/local/cargo/bin:/root/.cargo/bin"
 
 # DEPENCIES
 # Python3
