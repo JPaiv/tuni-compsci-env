@@ -61,20 +61,20 @@
                 "conventionalCommits.gitmoji": false
             },
             "[cpp]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "ms-vscode.cpptools"
+                "editor.defaultFormatter": "ms-vscode.cpptools",
+                "editor.formatOnSave": true
             },
             "[csharp]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "ms-dotnettools.csharp"
+                "editor.defaultFormatter": "ms-dotnettools.csharp",
+                "editor.formatOnSave": true
             },
             "[go]": {
                 "editor.defaultFormatter": "golang.Go",
                 "editor.formatOnSave": true
             },
             "[javascript]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "esbenp.prettier-vscode"
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.formatOnSave": true
             },
             "[json]": {
                 "editor.defaultFormatter": "ZainChen.json",
@@ -85,20 +85,28 @@
                 "editor.formatOnSave": true
             },
             "[makefile]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "ms-vscode.makefile-tools"
+                "editor.defaultFormatter": "ms-vscode.makefile-tools",
+                "editor.formatOnSave": true
             },
             "[markdown]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+                "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+                "editor.formatOnSave": true
+            },
+            "[python]": {
+                "editor.defaultFormatter": "ms-python.flake8",
+                "editor.formatOnSave": true
             },
             "[shellscript]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "foxundermoon.shell-format"
+                "editor.defaultFormatter": "foxundermoon.shell-format",
+                "editor.formatOnSave": true
             },
             "[toml]": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "tamasfe.even-better-toml"
+                "editor.defaultFormatter": "tamasfe.even-better-toml",
+                "editor.formatOnSave": true
+            },
+            "[typescript]": {
+                "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+                "editor.formatOnSave": true
             },
             "[yaml]": {
                 "editor.defaultFormatter": "redhat.vscode-yaml",
@@ -106,29 +114,39 @@
             },
             "extensions": [
                 "Tyriar.sort-lines",
+                "aws-scripting-guy.cform",
+                "dbaeumer.vscode-eslint",
                 "eamodio.gitlens",
                 "esbenp.prettier-vscode",
                 "foxundermoon.shell-format",
-                "golang.Go",
+                "hashicorp.terraform",
                 "ms-azuretools.vscode-docker",
-                "ms-dotnettools.csdevkit",
-                "ms-dotnettools.csharp",
                 "ms-python.black-formatter",
+                "ms-python.flake8",
+                "ms-python.pylint",
                 "ms-python.python",
-                "ms-vscode.cmake-tools",
-                "ms-vscode.cpptools",
-                "ms-vscode.cpptools-extension-pack",
                 "ms-vscode.makefile-tools",
                 "njpwerner.autodocstring",
                 "redhat.vscode-yaml",
                 "shardulm94.trailing-spaces",
                 "tamasfe.even-better-toml",
                 "vivaxy.vscode-conventional-commits",
+                "yoavbls.pretty-ts-errors",
                 "yzhang.markdown-all-in-one"
             ]
         }
     },
-    "features": {},
+    "remoteUser": "vscode",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:1": {
+            "gid": "1000",
+            "installZsh": "true",
+            "uid": "1000",
+            "upgradePackages": "false",
+            "username": "vscode"
+        },
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
     "mounts": [],
     "containerEnv": {}
 }

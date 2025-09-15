@@ -1,15 +1,24 @@
 # ---------- Stage 1/4: Javascript builder ----------
 FROM node:24.5.0 AS node-builder
 
-# Verify Javascript
-RUN echo "NODE Version:" && node --version
-RUN echo "NPM Version:" && npm --version
+# Typescript
+# TSX
+# Zig
+# Tools
+RUN npm install -g \
+    typescript \
+    typescript ts-node \
+    @types/node \
+    tsx  \
+    @ziglang/cli \
+    eslint
 
 # ---------- Stage 2/4: Go builder ----------
 FROM golang:1.25 AS go-builder
 
-# Verify Go
-RUN echo "Golang Version:" && go version
+RUN go install golang.org/x/tools/gopls@latest \
+    && go install github.com/go-delve/delve/cmd/dlv@latest \
+    && go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
 # ---------- Stage 3/4: .NET Builder ----------
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dotnet-builder
@@ -23,6 +32,7 @@ COPY --chmod=765 --from=node-builder /usr/local/lib/node_modules /usr/local/lib/
 
 # Go
 COPY --chmod=765 --from=go-builder /usr/local/go /usr/local/go
+COPY --chmod=765 --from=go-builder /go/bin /go/bin
 
 # .NET SDK
 COPY --chmod=765 --from=dotnet-builder /usr/share/dotnet /usr/share/dotnet
@@ -30,7 +40,7 @@ COPY --chmod=765 --from=dotnet-builder /usr/share/dotnet /usr/share/dotnet
 # Devcontainer post start script
 COPY --chmod=765 post-start.sh /usr/local/bin/post-start
 
-ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/go/bin:/usr/local:/usr/share/dotnet:${PATH}"
+ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/go/bin:/usr/local:/usr/share/dotnet"
 
 # DEPENCIES
 # Python3
@@ -42,7 +52,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-venv  \
     build-essential \
     apache2-utils \
+    bash-completion \
+    eza \
+    ripgrep \
     && rm -rf /var/lib/apt/lists/*
 
 # Helsinki time zone
 ENV TZ="Europe/Helsinki"
+
+USER vscode
