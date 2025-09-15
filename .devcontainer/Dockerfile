@@ -8,8 +8,9 @@ RUN echo "NPM Version:" && npm --version
 # ---------- Stage 2/4: Go builder ----------
 FROM golang:1.25 AS go-builder
 
-# Verify Go
-RUN echo "Golang Version:" && go version
+RUN go install golang.org/x/tools/gopls@latest \
+    && go install github.com/go-delve/delve/cmd/dlv@latest \
+    && go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
 # ---------- Stage 3/4: .NET Builder ----------
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dotnet-builder
