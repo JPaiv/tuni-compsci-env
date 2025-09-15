@@ -14,6 +14,13 @@ Includes:
 - Formatters
 - Ubuntu 24 devcontainer
 
+Programming languages:
+- Python 3
+- Golang
+- C++
+- C#/.NET
+- Javascript/Typescript
+
 ## 📦 Requirements
 
 Before starting, install:
@@ -30,7 +37,7 @@ Docker Desktop
 
 Github has good [docs](https://docs.github.com/en/get-started/git-basics/set-up-git)
 
-Windows users should test [Github Desktop](https://desktop.github.com/download/)
+Windows users should try [Github Desktop](https://desktop.github.com/download/)
 
 ## 🛠️ Setup Instructions
 
