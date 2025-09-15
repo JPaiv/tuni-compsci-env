@@ -128,7 +128,17 @@
             ]
         }
     },
-    "features": {},
+    "remoteUser": "vscode",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:1": {
+            "gid": "1000",
+            "installZsh": "true",
+            "uid": "1000",
+            "upgradePackages": "false",
+            "username": "vscode"
+        },
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
     "mounts": [],
     "containerEnv": {}
 }
