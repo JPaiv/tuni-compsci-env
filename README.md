@@ -15,11 +15,12 @@ Includes:
 - Ubuntu 24 devcontainer
 
 Programming languages:
-- Python 3
-- Golang
 - C++
-- C#/.NET
+- Golang
+- Haskell
 - Javascript/Typescript
+- Python 3
+- R
 
 ## 📦 Requirements
 
