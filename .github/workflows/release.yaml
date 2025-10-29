@@ -1,23 +1,33 @@
-name: Release
+name: Semantic Release
 
 on:
   push:
-    branches: [ "main" ]
-
-permissions:
-  contents: write # Publish a GitHub release
-  id-token: write # Use of OIDC for npm provenance
-  issues: write # Comment on released issues
-  pull-requests: write # Comment on released pull requests
+    branches: [main]
 
 jobs:
-  build:
+  semantic-release:
+    name: Semantic Release
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    permissions:
+      contents: write # Publish a GitHub release
+      id-token: write # Use of OIDC for npm provenance
+      issues: write # Comment on released issues
+      pull-requests: write # Comment on released pull requests
 
-    - uses: googleapis/release-please-action@v4
-      with:
-        token:  ${{ secrets.GITHUB_TOKEN }}
-        release-type: simple
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        with:
+          extra_plugins: |
+            @semantic-release/commit-analyzer
+            @semantic-release/git
+            @semantic-release/release-notes-generator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

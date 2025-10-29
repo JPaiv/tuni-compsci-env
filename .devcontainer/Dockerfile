@@ -13,17 +13,14 @@ RUN npm install -g \
     @ziglang/cli \
     eslint
 
-# ---------- Stage 2/4: Go builder ----------
+# ---------- Stage 2/3: Go builder ----------
 FROM golang:1.25 AS go-builder
 
 RUN go install golang.org/x/tools/gopls@latest \
     && go install github.com/go-delve/delve/cmd/dlv@latest \
     && go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
-# ---------- Stage 3/4: .NET Builder ----------
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dotnet-builder
-
-# ---------- Stage 4/4: Runtime devcontainer ----------
+# ---------- Stage 3/3: Runtime devcontainer ----------
 FROM mcr.microsoft.com/devcontainers/base:ubuntu AS runtime
 
 # Node
@@ -33,9 +30,6 @@ COPY --chmod=765 --from=node-builder /usr/local/lib/node_modules /usr/local/lib/
 # Go
 COPY --chmod=765 --from=go-builder /usr/local/go /usr/local/go
 COPY --chmod=765 --from=go-builder /go/bin /go/bin
-
-# .NET SDK
-COPY --chmod=765 --from=dotnet-builder /usr/share/dotnet /usr/share/dotnet
 
 # Devcontainer post start script
 COPY --chmod=765 post-start.sh /usr/local/bin/post-start
@@ -47,6 +41,7 @@ ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 # C++
 # Haskell
 # Common utils
+# R
 # Rust
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
@@ -60,6 +55,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     bash-completion \
     eza \
     ripgrep \
+    r-base \
     && curl https://sh.rustup.rs -sSf | sh -s -- -y \
     && rm -rf /var/lib/apt/lists/*
 
