@@ -1,3 +1,17 @@
+# [1.5.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.4.0...v1.5.0) (2025-10-29)
+
+
+### Features
+
+* **src/courses:** Add Flake for the virtual env ([ab6fb1e](https://github.com/JPaiv/tuni-compsci-env/commit/ab6fb1ec6a8f4947f0d648bc17823d24ec5ea1b9))
+
+# [1.5.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.4.0...v1.5.0) (2025-10-29)
+
+
+### Features
+
+* **src/courses:** Add Flake for the virtual env ([ab6fb1e](https://github.com/JPaiv/tuni-compsci-env/commit/ab6fb1ec6a8f4947f0d648bc17823d24ec5ea1b9))
+
 # [1.4.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.3.0...v1.4.0) (2025-10-29)
 
 
