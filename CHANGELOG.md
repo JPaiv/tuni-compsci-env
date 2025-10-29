@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.3.0...v1.4.0) (2025-10-29)
+
+
+### Features
+
+* **.devcontainer:** Add R formatter ([7e83c3c](https://github.com/JPaiv/tuni-compsci-env/commit/7e83c3c001a427ed16c7d464b32359e292a8f621))
+
+# [1.4.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.3.0...v1.4.0) (2025-10-29)
+
+
+### Features
+
+* **.devcontainer:** Add R formatter ([7e83c3c](https://github.com/JPaiv/tuni-compsci-env/commit/7e83c3c001a427ed16c7d464b32359e292a8f621))
+
 # Changelog
 
 ## [1.3.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.2.0...v1.3.0) (2025-09-15)
