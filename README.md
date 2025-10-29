@@ -16,8 +16,6 @@ Includes:
 
 Programming languages:
 - C++
-- Golang
-- Haskell
 - Javascript/Typescript
 - Python 3
 - R
