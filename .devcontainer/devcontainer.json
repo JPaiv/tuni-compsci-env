@@ -96,6 +96,10 @@
                 "editor.defaultFormatter": "yzhang.markdown-all-in-one",
                 "editor.formatOnSave": true
             },
+            "[r]": {
+                "editor.defaultFormatter": "reditorsupport.r",
+                "editor.formatOnSave": true
+            },
             "[rust]": {
                 "editor.defaultFormatter": "rust-lang.rust-analyzer",
                 "editor.formatOnSave": true
@@ -135,6 +139,7 @@
                 "ms-python.flake8",
                 "ms-python.pylint",
                 "ms-python.python",
+                "ms-vscode.cpptools-extension-pack",
                 "ms-vscode.makefile-tools",
                 "njpwerner.autodocstring",
                 "redhat.vscode-yaml",
