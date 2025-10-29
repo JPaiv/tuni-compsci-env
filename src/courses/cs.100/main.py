@@ -1,3 +1,11 @@
+"""
+Course: COMP.CS.100 Ohjelmointi 1 / Programming 1
+Student Id:
+Name:
+Email:
+"""
+
+
 def main() -> None:
     """Use this function for your course work tasks.
 
