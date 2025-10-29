@@ -152,7 +152,7 @@
             ]
         }
     },
-    "remoteUser": "vscode",
+    "remoteUser": "root", // Use root if you're using Windows, else vscode
     "features": {
         "ghcr.io/devcontainers/features/common-utils:1": {
             "gid": "1000",
@@ -163,6 +163,14 @@
         },
         "ghcr.io/devcontainers/features/git:1": {}
     },
-    "mounts": [],
+    "mounts": [
+        // Mount the host user's SSH keys into the container for Git or SSH access
+        "source=${env:USERPROFILE}\\.ssh,target=/root/.ssh,type=bind,consistency=cached",
+        // Mount the local workspace folder into the container's /workspace directory
+        "source=${localWorkspaceFolder},target=/workspace,type=bind",
+        // Bind the host machine's Docker socket into the devcontainer
+        // Allows the container to run Docker commands on the host (Docker-outside-of-Docker)
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
     "containerEnv": {}
 }
