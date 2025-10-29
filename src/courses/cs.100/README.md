@@ -50,4 +50,4 @@ Using a virtual env is a recommended practice in Python coding.
 
 ## 📄 Requirements
 
-The requiremens.txt file contains Python depencies. In this case, it's the [Black-formatter](https://github.com/psf/black).
+The requiremens.txt file contains external Python depencies.
