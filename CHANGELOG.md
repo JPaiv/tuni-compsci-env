@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.5.0...v1.6.0) (2025-12-13)
+
+
+### Features
+
+* Task submission ([dc878be](https://github.com/JPaiv/tuni-compsci-env/commit/dc878be69635448a4697b85dd3600c2883599497))
+
+# [1.6.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.5.0...v1.6.0) (2025-12-13)
+
+
+### Features
+
+* Task submission ([dc878be](https://github.com/JPaiv/tuni-compsci-env/commit/dc878be69635448a4697b85dd3600c2883599497))
+
 # [1.5.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.4.0...v1.5.0) (2025-10-29)
 
 
