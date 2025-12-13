@@ -1,3 +1,17 @@
+## [1.6.1](https://github.com/JPaiv/tuni-compsci-env/compare/v1.6.0...v1.6.1) (2025-12-13)
+
+
+### Bug Fixes
+
+* Fix wrong output ([3558911](https://github.com/JPaiv/tuni-compsci-env/commit/355891171be558676976c0c1964c4d0c457bf5e7))
+
+## [1.6.1](https://github.com/JPaiv/tuni-compsci-env/compare/v1.6.0...v1.6.1) (2025-12-13)
+
+
+### Bug Fixes
+
+* Fix wrong output ([3558911](https://github.com/JPaiv/tuni-compsci-env/commit/355891171be558676976c0c1964c4d0c457bf5e7))
+
 # [1.6.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.5.0...v1.6.0) (2025-12-13)
 
 
