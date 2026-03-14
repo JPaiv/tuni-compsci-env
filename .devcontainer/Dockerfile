@@ -1,70 +1,42 @@
-# ---------- Stage 1/3: Base builder ----------
-FROM alpine:3.22.1 AS base-builder
+# ---------- Stage 1/4: Base builder ----------
+FROM alpine:3.23.3 AS base-builder
 
 # OS packages
 RUN apk update \
     && apk add --no-cache \
-    bash \
-    curl \
-    build-base \
-    clang \
-    clang-dev \
-    clang-extra-tools \
-    cmake \
-    extra-cmake-modules \
-    llvm \
-    llvm-dev
+    bash=5.3.3-r1 \
+    ca-certificates=20251003-r0 \
+    coreutils=9.8-r1 \
+    curl=8.17.0-r1
 
-# ---------- Stage 2/3: Node builder ----------
-FROM node:24.5.0 AS node-builder
 
-# Typescript
-# TSX§§
-# Tools
-RUN npm install -g \
-    typescript \
-    ts-node \
-    @types/node \
-    tsx \
-    eslint
-
-# ---------- Stage 3/3: Runtime devcontainer ----------
+# ---------- Stage 4/4: Runtime devcontainer ----------
 FROM mcr.microsoft.com/devcontainers/base:ubuntu AS runtime
 
-# Depencies
+# Binaries
 COPY --chmod=765 --from=base-builder /usr/local/bin /usr/local/bin
-COPY --chmod=765 --from=base-builder /usr/bin/clang /usr/bin/clang
-COPY --chmod=765 --from=base-builder /usr/bin/clang++ /usr/bin/clang++
-COPY --chmod=765 --from=base-builder /usr/bin/cmake /usr/bin/cmake
-COPY --chmod=765 --from=base-builder /usr/bin/llvm-config /usr/bin/llvm-config
-COPY --chmod=765 --from=base-builder /usr/bin/make /usr/bin/make
 
-# Node
-COPY --chmod=765 --from=node-builder /usr/local/bin /usr/local/bin
-COPY --chmod=765 --from=node-builder /usr/local/lib/node_modules /usr/local/lib/node_modules
+# Devcontainer post-start script
+COPY --chmod=755 post-start.sh /usr/local/bin/post-start
 
-# Devcontainer post start script
-COPY --chmod=765 post-start.sh /usr/local/bin/post-start
-
-ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local"
-
-# DEPENCIES
-# Python3
-# R
+# OS PACKAGE DEPENDENCIES
 # Common utils
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
     python3-venv  \
-    r-base \
-    apache2-utils \
-    bash-completion \
-    eza \
-    ripgrep \
+    \
+    # ---------- Shell Enhancements ----------
+    bash-completion=1:2.11-8 \
+    bat=0.24.0-1build1 \
+    ripgrep=14.1.0-1 \
+    \
+    # ---------- Container & Network Tools ----------
+    bind9-dnsutils=1:9.18.39-0ubuntu0.24.04.2 \
     && rm -rf /var/lib/apt/lists/*
 
-# Helsinki time zone
-ENV TZ="Europe/Helsinki"
+# PATH
+ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-# Default User
-USER vscode
+# OSLO TZ
+ENV TZ="Europe/Helsibki"
