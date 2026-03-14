@@ -1,5 +1,10 @@
-#!/usr/bin/env bash
-
+# Display welcome message
 clear
-printf "\e[0;32mTuni CompSci Devcontainer: $(basename $PWD)\e[0m\n"
+printf "\n"
+success "═══════════════════════════════════════════════════════════"
+success "  DevOps Dev Container: $(basename "$PWD")"
+success "═══════════════════════════════════════════════════════════"
+printf "\n"
 devcontainer-info
+success "Container ready! 🚀"
+printf "\n"

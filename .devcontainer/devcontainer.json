@@ -1,8 +1,7 @@
 {
-    "name": "Tuni",
+    "name": "DevOps",
     "build": {
-        "dockerfile": "Dockerfile",
-        "args": {}
+        "dockerfile": "Dockerfile"
     },
     "postStartCommand": "post-start",
     "customizations": {
@@ -14,7 +13,7 @@
                     "comments": false,
                     "strings": false
                 },
-                // Makes VS Code Intergrated terminal to inherit local machine shell environment
+                // Makes VS Code Integrated terminal to inherit local machine shell environment
                 "terminal.integrated.inheritEnv": true,
                 // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.
                 "editor.acceptSuggestionOnCommitCharacter": true,
@@ -58,99 +57,125 @@
                     "terminalCursor.foreground": "#E0E0E0"
                 },
                 // Disable Git emojis for VS Code Conventional Commit extension
-                "conventionalCommits.gitmoji": false
-            },
-            "[cpp]": {
-                "editor.defaultFormatter": "ms-vscode.cpptools",
-                "editor.formatOnSave": true
-            },
-            "[javascript]": {
-                "editor.defaultFormatter": "esbenp.prettier-vscode",
-                "editor.formatOnSave": true
-            },
-            "[json]": {
-                "editor.defaultFormatter": "ZainChen.json",
-                "editor.formatOnSave": true
-            },
-            "[jsonc]": {
-                "editor.defaultFormatter": "ZainChen.json",
-                "editor.formatOnSave": true
-            },
-            "[makefile]": {
-                "editor.defaultFormatter": "ms-vscode.makefile-tools",
-                "editor.formatOnSave": true
-            },
-            "[markdown]": {
-                "editor.defaultFormatter": "yzhang.markdown-all-in-one",
-                "editor.formatOnSave": true
-            },
-            "[r]": {
-                "editor.defaultFormatter": "reditorsupport.r",
-                "editor.formatOnSave": true
-            },
-            "[python]": {
-                "editor.defaultFormatter": "ms-python.flake8",
-                "editor.formatOnSave": true
-            },
-            "[shellscript]": {
-                "editor.defaultFormatter": "foxundermoon.shell-format",
-                "editor.formatOnSave": true
-            },
-            "[toml]": {
-                "editor.defaultFormatter": "tamasfe.even-better-toml",
-                "editor.formatOnSave": true
-            },
-            "[typescript]": {
-                "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-                "editor.formatOnSave": true
-            },
-            "[yaml]": {
-                "editor.defaultFormatter": "redhat.vscode-yaml",
-                "editor.formatOnSave": true
+                "conventionalCommits.gitmoji": false,
+                // Language-specific settings (moved inside settings object)
+                "[helm]": {
+                    "editor.defaultFormatter": "redhat.vscode-yaml",
+                    "editor.formatOnSave": true
+                },
+                "[javascript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode",
+                    "editor.formatOnSave": true
+                },
+                "[json]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode",
+                    "editor.formatOnSave": true
+                },
+                "[jsonc]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode",
+                    "editor.formatOnSave": true
+                },
+                "[makefile]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "ms-vscode.makefile-tools"
+                },
+                "[markdown]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+                },
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.formatOnSave": true
+                },
+                "[shellscript]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "foxundermoon.shell-format"
+                },
+                "[terraform]": {
+                    "editor.defaultFormatter": "hashicorp.terraform",
+                    "editor.formatOnSave": true
+                },
+                "[terragrunt]": {
+                    "editor.defaultFormatter": "hashicorp.terraform",
+                    "editor.formatOnSave": true
+                },
+                "[toml]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "tamasfe.even-better-toml"
+                },
+                "[typescript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode",
+                    "editor.formatOnSave": true
+                },
+                "[yaml]": {
+                    "editor.defaultFormatter": "redhat.vscode-yaml",
+                    "editor.formatOnSave": true
+                }
             },
             "extensions": [
-                "Tyriar.sort-lines",
-                "aws-scripting-guy.cform",
-                "dbaeumer.vscode-eslint",
-                "eamodio.gitlens",
-                "esbenp.prettier-vscode",
-                "foxundermoon.shell-format",
-                "ms-azuretools.vscode-docker",
-                "ms-python.black-formatter",
-                "ms-python.flake8",
-                "ms-python.pylint",
-                "ms-python.python",
-                "ms-vscode.cpptools-extension-pack",
-                "ms-vscode.makefile-tools",
-                "njpwerner.autodocstring",
-                "redhat.vscode-yaml",
-                "shardulm94.trailing-spaces",
-                "tamasfe.even-better-toml",
-                "vivaxy.vscode-conventional-commits",
-                "yoavbls.pretty-ts-errors",
-                "yzhang.markdown-all-in-one"
+                // ─────────────────────────────────────────────
+                // Cloud & Infrastructure (AWS, Terraform, Kubernetes)
+                // ─────────────────────────────────────────────
+                "AmazonWebServices.aws-toolkit-vscode", // AWS Toolkit: AWS Explorer, Lambda, IAM, S3, etc.
+                "DerekCAshmore.terraform-docs", // Auto-generate Terraform documentation
+                "HashiCorp.HCL", // HCL syntax support
+                "aws-scripting-guy.cform", // CloudFormation syntax highlighting and snippets
+                "hashicorp.terraform", // Terraform language support
+                "ms-kubernetes-tools.vscode-kubernetes-tools", // Kubernetes cluster and manifest management
+                "tfsec.tfsec", // Terraform security scanning
+                "tilt-dev.tiltfile", // Tiltfile syntax support
+                // ─────────────────────────────────────────────
+                // Containers & Build Tools
+                // ─────────────────────────────────────────────
+                "ms-azuretools.vscode-docker", // Dockerfile, Docker Compose, container tools
+                "ms-vscode.makefile-tools", // Makefile support and build integration
+                // ─────────────────────────────────────────────
+                // Programming Languages & Formatting
+                // ─────────────────────────────────────────────
+                "foxundermoon.shell-format", // Shell script formatting (shfmt)
+                "ms-python.black-formatter", // Python formatting using Black
+                "ms-python.python", // Python language support
+                "redhat.vscode-yaml", // YAML language support and validation
+                "tamasfe.even-better-toml", // TOML language support
+                // ─────────────────────────────────────────────
+                // Git & Version Control
+                // ─────────────────────────────────────────────
+                "eamodio.gitlens", // Enhanced Git history, blame, and insights
+                "vivaxy.vscode-conventional-commits", // Conventional commit message helper
+                // ─────────────────────────────────────────────
+                // Documentation & Markdown
+                // ─────────────────────────────────────────────
+                "njpwerner.autodocstring", // Auto-generate Python docstrings
+                "yzhang.markdown-all-in-one", // Markdown editing, preview, and shortcuts
+                // ─────────────────────────────────────────────
+                // Editor Utilities & Quality-of-Life
+                // ─────────────────────────────────────────────
+                "Tyriar.sort-lines", // Sort selected lines alphabetically
+                "esbenp.prettier-vscode", // Code formatter for JS, JSON, Markdown, etc.
+                "shardulm94.trailing-spaces", // Highlight and remove trailing whitespace
+                // ─────────────────────────────────────────────
+                // Theme
+                // ─────────────────────────────────────────────
+                "teabyii.ayu" // Ayu color theme
             ]
         }
     },
-    "remoteUser": "root", // Use root if you're using Windows, else vscode
+    "remoteUser": "root",
     "features": {
-        "ghcr.io/devcontainers/features/common-utils:1": {
+        "ghcr.io/devcontainers/features/common-utils:2.5.4": {
             "gid": "1000",
             "installZsh": "true",
             "uid": "1000",
             "upgradePackages": "false",
             "username": "vscode"
         },
-        "ghcr.io/devcontainers/features/git:1": {}
+        "ghcr.io/devcontainers/features/github-cli:1": {}
     },
     "mounts": [
-        // Mount the host user's SSH keys into the container for Git or SSH access
-        "source=${env:USERPROFILE}\\.ssh,target=/root/.ssh,type=bind,consistency=cached",
-        // Mount the local workspace folder into the container's /workspace directory
-        "source=${localWorkspaceFolder},target=/workspace,type=bind",
-        // Bind the host machine's Docker socket into the devcontainer
-        // Allows the container to run Docker commands on the host (Docker-outside-of-Docker)
-        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+        // Mount the current workspace folder from the host into the container
+        // This is where your project files live and are edited
+        // File changes are reflected both on the host and inside the container
+        "source=${localWorkspaceFolder},target=/workspace,type=bind"
     ],
     "containerEnv": {}
 }
