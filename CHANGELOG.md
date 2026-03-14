@@ -1,3 +1,19 @@
+# [1.7.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.6.1...v1.7.0) (2026-03-14)
+
+
+### Features
+
+* **.devcontainer:** Update ([8a4c576](https://github.com/JPaiv/tuni-compsci-env/commit/8a4c57620b277fc4c362cecb59288e6d934d831c))
+* **.devcontainer:** Update ([#25](https://github.com/JPaiv/tuni-compsci-env/issues/25)) ([dc77802](https://github.com/JPaiv/tuni-compsci-env/commit/dc778025817c3b4e6effaf44671f8b4998ba5858))
+
+# [1.7.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.6.1...v1.7.0) (2026-03-14)
+
+
+### Features
+
+* **.devcontainer:** Update ([8a4c576](https://github.com/JPaiv/tuni-compsci-env/commit/8a4c57620b277fc4c362cecb59288e6d934d831c))
+* **.devcontainer:** Update ([#25](https://github.com/JPaiv/tuni-compsci-env/issues/25)) ([dc77802](https://github.com/JPaiv/tuni-compsci-env/commit/dc778025817c3b4e6effaf44671f8b4998ba5858))
+
 ## [1.6.1](https://github.com/JPaiv/tuni-compsci-env/compare/v1.6.0...v1.6.1) (2025-12-13)
 
 
