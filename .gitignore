@@ -205,3 +205,26 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Compiled binaries from `task build` (extensionless, placed next to source).
+# Ignore extensionless files anywhere under src/courses; allow directories
+# and any file that has an extension.
+src/courses/**
+!src/courses/**/
+!src/courses/**/*.*
+!src/courses/**/Makefile
+!src/courses/**/README*
+!src/courses/**/LICENSE*
+
+# Re-ignore Python virtualenvs, caches, and bytecode inside src/courses
+# (the broad !src/courses/**/ re-include above otherwise un-ignores them).
+src/courses/**/venv/
+src/courses/**/.venv/
+src/courses/**/env/
+src/courses/**/__pycache__/
+src/courses/**/.pytest_cache/
+src/courses/**/.mypy_cache/
+src/courses/**/.ruff_cache/
+src/courses/**/node_modules/
+src/courses/**/*.pyc
+src/courses/**/*.pyo

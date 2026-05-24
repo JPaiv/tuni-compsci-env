@@ -11,8 +11,13 @@ Preconfigured VS Code Devcontainer
 Includes:
 
 - Common tools (curl, ripgrep, bat, GitHub CLI)
-- Formatters & linters wired to VS Code (Prettier, Black, clang-format, shfmt, markdownlint)
-- [Task](https://taskfile.dev) — task runner with a course-aware C/C++ build target
+- Formatters & linters wired to VS Code and available as CLIs:
+  - Python — Black, Ruff
+  - C/C++ — clang-format
+  - Haskell — Ormolu (format), HLint (lint)
+  - JS/TS — Prettier (format), ESLint (lint)
+  - Markdown — markdownlint, Prettier
+- [Task](https://taskfile.dev) — pinned task runner with course-aware C/C++ build, plus `fmt`, `lint`, `run`, `clean`
 - Ubuntu 24 devcontainer
 
 Programming languages:
@@ -20,7 +25,7 @@ Programming languages:
 - C / C++ (gcc, g++, gdb, make, cmake)
 - Haskell (ghc, cabal, stack)
 - Python 3
-- JavaScript / TypeScript
+- JavaScript / TypeScript (Node LTS via devcontainer feature)
 
 ## 📦 Requirements
 
@@ -65,9 +70,13 @@ task build     -- src/courses/cs.120/unsigned_interval.c   # auto: gcc
 task build     -- src/courses/cs.110/.../foo.cpp           # auto: g++
 task build:c   -- path/to/file.c                           # force gcc
 task build:cpp -- path/to/file.cpp                         # force g++
+task run       -- src/courses/cs.120/unsigned_interval.c 5 2   # build + run with args
+task fmt                                                   # format Python / C / C++ / Haskell / JS / TS / JSON / MD / YAML
+task lint                                                  # lint Haskell (HLint) and JS/TS (ESLint)
+task clean                                                 # remove compiled binaries under src/courses
 ```
 
-The output binary is placed next to the source file with the extension stripped.
+The output binary is placed next to the source file with the extension stripped. Compiled binaries (extensionless files under `src/courses/**`) are git-ignored.
 
 ## 📝 Editor configs
 
@@ -77,4 +86,6 @@ Formatter and linter configs live at the repo root and are picked up automatical
 - `.clang-format` — C/C++ (LLVM base, Allman braces, 100 col)
 - `pyproject.toml` — Black + Ruff
 - `.prettierrc.json` — Prettier (JS/TS/JSON/MD/YAML)
+- `eslint.config.js` — ESLint v9 flat config (JS/TS, with typescript-eslint)
+- `.hlint.yaml` — HLint rules for Haskell
 - `.markdownlint.json` — Markdown lint
