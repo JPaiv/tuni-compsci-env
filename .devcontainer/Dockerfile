@@ -9,9 +9,9 @@ RUN apk update \
     coreutils=9.8-r1 \
     curl=8.17.0-r1
 
-# Taskfile
-# Pure-Go static binary
-RUN curl -sSL https://taskfile.dev/install.sh | sh -s -- -d -b /usr/local/bin
+# Taskfile (pinned). Pure-Go static binary — same artifact runs on Alpine and Ubuntu.
+ARG TASK_VERSION=v3.51.1
+RUN curl -sSL https://taskfile.dev/install.sh | sh -s -- -d -b /usr/local/bin "${TASK_VERSION}"
 
 
 # ---------- Stage 2/2: Runtime devcontainer ----------
@@ -36,16 +36,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ripgrep \
     \
     # ---------- Haskell Development ----------
-    ghc \
     cabal-install \
+    ghc \
     haskell-stack \
+    hlint \
+    ormolu \
     \
     # ----------.github/workflows C/C++ Development ----------
-    gcc \
+    clang-format \
+    cmake \
     g++ \
+    gcc \
     gdb \
     make \
-    cmake \
+    \
+    # ---------- Python Formatters/Linters ----------
+    black \
     \
     # ---------- Container & Network Tools ----------
     bind9-dnsutils \

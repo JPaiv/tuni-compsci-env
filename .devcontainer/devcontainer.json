@@ -1,181 +1,171 @@
 {
-    "name": "DevOps",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "postStartCommand": "post-start",
-    "customizations": {
-        "vscode": {
-            "settings": {
-                // Controls if quick suggestions should show up while typing
-                "editor.quickSuggestions": {
-                    "other": true,
-                    "comments": false,
-                    "strings": false
-                },
-                // Makes VS Code Integrated terminal to inherit local machine shell environment
-                "terminal.integrated.inheritEnv": true,
-                // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.
-                "editor.acceptSuggestionOnCommitCharacter": true,
-                // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions. The value 'smart' means only accept a suggestion with Enter when it makes a textual change
-                "editor.acceptSuggestionOnEnter": "on",
-                // Controls the delay in ms after which quick suggestions will show up.
-                "editor.quickSuggestionsDelay": 10,
-                // Controls if suggestions should automatically show up when typing trigger characters
-                "editor.suggestOnTriggerCharacters": true,
-                // Controls if pressing tab inserts the best suggestion and if tab cycles through other suggestions
-                "editor.tabCompletion": "off",
-                // Controls whether sorting favours words that appear close to the cursor
-                "editor.suggest.localityBonus": true,
-                // Controls how suggestions are pre-selected when showing the suggest list
-                "editor.suggestSelection": "first",
-                // Enable word based suggestions
-                "editor.wordBasedSuggestions": "matchingDocuments",
-                // Enable parameter hints
-                "editor.parameterHints.enabled": true,
-                // Nicer default VS Code integrated terminal colors
-                "workbench.colorCustomizations": {
-                    "terminal.ansiBlack": "#000000",
-                    "terminal.ansiBlue": "#6FB3D2",
-                    "terminal.ansiBrightBlack": "#B0B0B0",
-                    "terminal.ansiBrightBlue": "#6FB3D2",
-                    "terminal.ansiBrightCyan": "#76C7B7",
-                    "terminal.ansiBrightGreen": "#A1C659",
-                    "terminal.ansiBrightMagenta": "#D381C3",
-                    "terminal.ansiBrightRed": "#FB0120",
-                    "terminal.ansiBrightWhite": "#FFFFFF",
-                    "terminal.ansiBrightYellow": "#FDA331",
-                    "terminal.ansiCyan": "#76C7B7",
-                    "terminal.ansiGreen": "#A1C659",
-                    "terminal.ansiMagenta": "#D381C3",
-                    "terminal.ansiRed": "#FB0120",
-                    "terminal.ansiWhite": "#E0E0E0",
-                    "terminal.ansiYellow": "#FDA331",
-                    "terminal.background": "#000000",
-                    "terminal.foreground": "#E0E0E0",
-                    "terminalCursor.background": "#E0E0E0",
-                    "terminalCursor.foreground": "#E0E0E0"
-                },
-                // Disable Git emojis for VS Code Conventional Commit extension
-                "conventionalCommits.gitmoji": false,
-                // Language-specific settings (moved inside settings object)
-                "[helm]": {
-                    "editor.defaultFormatter": "redhat.vscode-yaml",
-                    "editor.formatOnSave": true
-                },
-                "[javascript]": {
-                    "editor.defaultFormatter": "esbenp.prettier-vscode",
-                    "editor.formatOnSave": true
-                },
-                "[json]": {
-                    "editor.defaultFormatter": "esbenp.prettier-vscode",
-                    "editor.formatOnSave": true
-                },
-                "[jsonc]": {
-                    "editor.defaultFormatter": "esbenp.prettier-vscode",
-                    "editor.formatOnSave": true
-                },
-                "[makefile]": {
-                    "editor.formatOnSave": true,
-                    "editor.defaultFormatter": "ms-vscode.makefile-tools"
-                },
-                "[markdown]": {
-                    "editor.formatOnSave": true,
-                    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-                },
-                "[python]": {
-                    "editor.defaultFormatter": "ms-python.black-formatter",
-                    "editor.formatOnSave": true
-                },
-                "[shellscript]": {
-                    "editor.formatOnSave": true,
-                    "editor.defaultFormatter": "foxundermoon.shell-format"
-                },
-                "[terraform]": {
-                    "editor.defaultFormatter": "hashicorp.terraform",
-                    "editor.formatOnSave": true
-                },
-                "[terragrunt]": {
-                    "editor.defaultFormatter": "hashicorp.terraform",
-                    "editor.formatOnSave": true
-                },
-                "[toml]": {
-                    "editor.formatOnSave": true,
-                    "editor.defaultFormatter": "tamasfe.even-better-toml"
-                },
-                "[typescript]": {
-                    "editor.defaultFormatter": "esbenp.prettier-vscode",
-                    "editor.formatOnSave": true
-                },
-                "[yaml]": {
-                    "editor.defaultFormatter": "redhat.vscode-yaml",
-                    "editor.formatOnSave": true
-                }
-            },
-            "extensions": [
-                // ─────────────────────────────────────────────
-                // Cloud & Infrastructure (AWS, Terraform, Kubernetes)
-                // ─────────────────────────────────────────────
-                "AmazonWebServices.aws-toolkit-vscode", // AWS Toolkit: AWS Explorer, Lambda, IAM, S3, etc.
-                "DerekCAshmore.terraform-docs", // Auto-generate Terraform documentation
-                "HashiCorp.HCL", // HCL syntax support
-                "aws-scripting-guy.cform", // CloudFormation syntax highlighting and snippets
-                "hashicorp.terraform", // Terraform language support
-                "ms-kubernetes-tools.vscode-kubernetes-tools", // Kubernetes cluster and manifest management
-                "tfsec.tfsec", // Terraform security scanning
-                "tilt-dev.tiltfile", // Tiltfile syntax support
-                // ─────────────────────────────────────────────
-                // Containers & Build Tools
-                // ─────────────────────────────────────────────
-                "ms-azuretools.vscode-docker", // Dockerfile, Docker Compose, container tools
-                "ms-vscode.makefile-tools", // Makefile support and build integration
-                // ─────────────────────────────────────────────
-                // Programming Languages & Formatting
-                // ─────────────────────────────────────────────
-                "foxundermoon.shell-format", // Shell script formatting (shfmt)
-                "ms-python.black-formatter", // Python formatting using Black
-                "ms-python.python", // Python language support
-                "redhat.vscode-yaml", // YAML language support and validation
-                "tamasfe.even-better-toml", // TOML language support
-                // ─────────────────────────────────────────────
-                // Git & Version Control
-                // ─────────────────────────────────────────────
-                "eamodio.gitlens", // Enhanced Git history, blame, and insights
-                "vivaxy.vscode-conventional-commits", // Conventional commit message helper
-                // ─────────────────────────────────────────────
-                // Documentation & Markdown
-                // ─────────────────────────────────────────────
-                "njpwerner.autodocstring", // Auto-generate Python docstrings
-                "yzhang.markdown-all-in-one", // Markdown editing, preview, and shortcuts
-                // ─────────────────────────────────────────────
-                // Editor Utilities & Quality-of-Life
-                // ─────────────────────────────────────────────
-                "Tyriar.sort-lines", // Sort selected lines alphabetically
-                "esbenp.prettier-vscode", // Code formatter for JS, JSON, Markdown, etc.
-                "shardulm94.trailing-spaces", // Highlight and remove trailing whitespace
-                // ─────────────────────────────────────────────
-                // Theme
-                // ─────────────────────────────────────────────
-                "teabyii.ayu" // Ayu color theme
-            ]
-        }
-    },
-    "remoteUser": "root",
-    "features": {
-        "ghcr.io/devcontainers/features/common-utils:2.5.4": {
-            "gid": "1000",
-            "installZsh": "true",
-            "uid": "1000",
-            "upgradePackages": "false",
-            "username": "vscode"
+  "name": "DevOps",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postStartCommand": "post-start",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // Controls if quick suggestions should show up while typing
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": false,
+          "strings": false
         },
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        // Makes VS Code Integrated terminal to inherit local machine shell environment
+        "terminal.integrated.inheritEnv": true,
+        // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.
+        "editor.acceptSuggestionOnCommitCharacter": true,
+        // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions. The value 'smart' means only accept a suggestion with Enter when it makes a textual change
+        "editor.acceptSuggestionOnEnter": "on",
+        // Controls the delay in ms after which quick suggestions will show up.
+        "editor.quickSuggestionsDelay": 10,
+        // Controls if suggestions should automatically show up when typing trigger characters
+        "editor.suggestOnTriggerCharacters": true,
+        // Controls if pressing tab inserts the best suggestion and if tab cycles through other suggestions
+        "editor.tabCompletion": "off",
+        // Controls whether sorting favours words that appear close to the cursor
+        "editor.suggest.localityBonus": true,
+        // Controls how suggestions are pre-selected when showing the suggest list
+        "editor.suggestSelection": "first",
+        // Enable word based suggestions
+        "editor.wordBasedSuggestions": "matchingDocuments",
+        // Enable parameter hints
+        "editor.parameterHints.enabled": true,
+        // Nicer default VS Code integrated terminal colors
+        "workbench.colorCustomizations": {
+          "terminal.ansiBlack": "#000000",
+          "terminal.ansiBlue": "#6FB3D2",
+          "terminal.ansiBrightBlack": "#B0B0B0",
+          "terminal.ansiBrightBlue": "#6FB3D2",
+          "terminal.ansiBrightCyan": "#76C7B7",
+          "terminal.ansiBrightGreen": "#A1C659",
+          "terminal.ansiBrightMagenta": "#D381C3",
+          "terminal.ansiBrightRed": "#FB0120",
+          "terminal.ansiBrightWhite": "#FFFFFF",
+          "terminal.ansiBrightYellow": "#FDA331",
+          "terminal.ansiCyan": "#76C7B7",
+          "terminal.ansiGreen": "#A1C659",
+          "terminal.ansiMagenta": "#D381C3",
+          "terminal.ansiRed": "#FB0120",
+          "terminal.ansiWhite": "#E0E0E0",
+          "terminal.ansiYellow": "#FDA331",
+          "terminal.background": "#000000",
+          "terminal.foreground": "#E0E0E0",
+          "terminalCursor.background": "#E0E0E0",
+          "terminalCursor.foreground": "#E0E0E0"
+        },
+        // Disable Git emojis for VS Code Conventional Commit extension
+        "conventionalCommits.gitmoji": false,
+        // Language-specific settings (moved inside settings object)
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[makefile]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "ms-vscode.makefile-tools"
+        },
+        "[markdown]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+        },
+        "[haskell]": {
+          "editor.defaultFormatter": "haskell.haskell",
+          "editor.formatOnSave": true
+        },
+        "haskell.formattingProvider": "ormolu",
+        "haskell.plugin.hlint.diagnosticsOn": true,
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": true
+        },
+        "[shellscript]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "foxundermoon.shell-format"
+        },
+        "[toml]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "tamasfe.even-better-toml"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml",
+          "editor.formatOnSave": true
+        }
+      },
+      "extensions": [
+        // ─────────────────────────────────────────────
+        // Containers & Build Tools
+        // ─────────────────────────────────────────────
+        "ms-azuretools.vscode-docker", // Dockerfile, Docker Compose, container tools
+        "ms-vscode.makefile-tools", // Makefile support and build integration
+        // ─────────────────────────────────────────────
+        // Programming Languages & Formatting
+        // ─────────────────────────────────────────────
+        "foxundermoon.shell-format", // Shell script formatting (shfmt)
+        "haskell.haskell", // Haskell language support and GHCi integration
+        "justusadam.language-haskell", // Haskell syntax highlighting
+        "dbaeumer.vscode-eslint", // ESLint integration for JS/TS
+        "ms-vscode.cpptools", // C/C++ language support, debugging, IntelliSense
+        "ms-python.black-formatter", // Python formatting using Black
+        "ms-python.python", // Python language support
+        "redhat.vscode-yaml", // YAML language support and validation
+        "tamasfe.even-better-toml", // TOML language support
+        // ─────────────────────────────────────────────
+        // Git & Version Control
+        // ─────────────────────────────────────────────
+        "eamodio.gitlens", // Enhanced Git history, blame, and insights
+        "vivaxy.vscode-conventional-commits", // Conventional commit message helper
+        // ─────────────────────────────────────────────
+        // Documentation & Markdown
+        // ─────────────────────────────────────────────
+        "njpwerner.autodocstring", // Auto-generate Python docstrings
+        "yzhang.markdown-all-in-one", // Markdown editing, preview, and shortcuts
+        // ─────────────────────────────────────────────
+        // Editor Utilities & Quality-of-Life
+        // ─────────────────────────────────────────────
+        "Tyriar.sort-lines", // Sort selected lines alphabetically
+        "esbenp.prettier-vscode", // Code formatter for JS, JSON, Markdown, etc.
+        "shardulm94.trailing-spaces", // Highlight and remove trailing whitespace
+        // ─────────────────────────────────────────────
+        // Theme
+        // ─────────────────────────────────────────────
+        "teabyii.ayu" // Ayu color theme
+      ]
+    }
+  },
+  "remoteUser": "root",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2.5.4": {
+      "gid": "1000",
+      "installZsh": "true",
+      "uid": "1000",
+      "upgradePackages": "false",
+      "username": "vscode"
     },
-    "mounts": [
-        // Mount the current workspace folder from the host into the container
-        // This is where your project files live and are edited
-        // File changes are reflected both on the host and inside the container
-        "source=${localWorkspaceFolder},target=/workspace,type=bind"
-    ],
-    "containerEnv": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "postCreateCommand": "npm install -g prettier@3 eslint@9 typescript@5 typescript-eslint@8 @eslint/js@9",
+  "mounts": [
+    "source=/mnt/c/Users/juhop/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "containerEnv": {}
 }

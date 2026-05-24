@@ -1,0 +1,14 @@
+# HLint configuration. Run with: hlint <file>.hs
+
+- arguments:
+    - --color=auto
+
+# Custom hints
+- group:
+    name: generalise
+    enabled: true
+
+# Loosen a few rules that are noisy in coursework
+- ignore: { name: "Use camelCase" }
+- ignore: { name: "Redundant bracket" }
+- ignore: { name: "Avoid lambda" }

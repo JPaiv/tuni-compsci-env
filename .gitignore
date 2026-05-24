@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Compiled binaries from `task build` (extensionless, placed next to source).
+# Ignore extensionless files anywhere under src/courses; allow directories
+# and any file that has an extension.
+src/courses/**
+!src/courses/**/
+!src/courses/**/*.*
+!src/courses/**/Makefile
+!src/courses/**/README*
+!src/courses/**/LICENSE*
