@@ -10,15 +10,17 @@ Preconfigured VS Code Devcontainer
 
 Includes:
 
-- Common tools
-- Formatters
+- Common tools (curl, ripgrep, bat, GitHub CLI)
+- Formatters & linters wired to VS Code (Prettier, Black, clang-format, shfmt, markdownlint)
+- [Task](https://taskfile.dev) — task runner with a course-aware C/C++ build target
 - Ubuntu 24 devcontainer
 
 Programming languages:
-- C++
-- Javascript/Typescript
+
+- C / C++ (gcc, g++, gdb, make, cmake)
+- Haskell (ghc, cabal, stack)
 - Python 3
-- R
+- JavaScript / TypeScript
 
 ## 📦 Requirements
 
@@ -47,3 +49,32 @@ Windows users should try [Github Desktop](https://desktop.github.com/download/)
 3. When prompted, select “Reopen in Container”.
 
 4. VS Code and Docker will handle the rest
+
+## ⚡ Building C / C++ with Task
+
+The repo ships a `Taskfile.yml`. The `build` target picks the compiler from the course in the path:
+
+| Course                 | Compiler | Standard   |
+| ---------------------- | -------- | ---------- |
+| cs.120                 | gcc      | `-std=c11` |
+| cs.110, cs.111, cs.115 | g++      | `-std=c++17` |
+
+```bash
+task --list                                                # show all tasks
+task build     -- src/courses/cs.120/unsigned_interval.c   # auto: gcc
+task build     -- src/courses/cs.110/.../foo.cpp           # auto: g++
+task build:c   -- path/to/file.c                           # force gcc
+task build:cpp -- path/to/file.cpp                         # force g++
+```
+
+The output binary is placed next to the source file with the extension stripped.
+
+## 📝 Editor configs
+
+Formatter and linter configs live at the repo root and are picked up automatically by VS Code:
+
+- `.editorconfig` — indent, EOL, trailing whitespace
+- `.clang-format` — C/C++ (LLVM base, Allman braces, 100 col)
+- `pyproject.toml` — Black + Ruff
+- `.prettierrc.json` — Prettier (JS/TS/JSON/MD/YAML)
+- `.markdownlint.json` — Markdown lint

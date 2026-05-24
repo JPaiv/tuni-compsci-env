@@ -1,0 +1,23 @@
+---
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+BreakBeforeBraces: Allman
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+PointerAlignment: Right
+SpaceAfterCStyleCast: true
+IncludeBlocks: Preserve
+SortIncludes: false
+---
+Language: Cpp
+Standard: c++17
+---
+Language: Cpp
+# Plain C tweaks live in the C++ block since clang-format
+# uses the Cpp language for both C and C++.

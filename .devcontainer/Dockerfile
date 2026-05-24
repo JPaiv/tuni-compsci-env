@@ -1,4 +1,4 @@
-# ---------- Stage 1/4: Base builder ----------
+# ---------- Stage 1/2: Base builder ----------
 FROM alpine:3.23.3 AS base-builder
 
 # OS packages
@@ -9,8 +9,12 @@ RUN apk update \
     coreutils=9.8-r1 \
     curl=8.17.0-r1
 
+# Taskfile
+# Pure-Go static binary
+RUN curl -sSL https://taskfile.dev/install.sh | sh -s -- -d -b /usr/local/bin
 
-# ---------- Stage 4/4: Runtime devcontainer ----------
+
+# ---------- Stage 2/2: Runtime devcontainer ----------
 FROM mcr.microsoft.com/devcontainers/base:ubuntu AS runtime
 
 # Binaries
@@ -27,16 +31,28 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-venv  \
     \
     # ---------- Shell Enhancements ----------
-    bash-completion=1:2.11-8 \
-    bat=0.24.0-1build1 \
-    ripgrep=14.1.0-1 \
+    bash-completion \
+    bat \
+    ripgrep \
+    \
+    # ---------- Haskell Development ----------
+    ghc \
+    cabal-install \
+    haskell-stack \
+    \
+    # ----------.github/workflows C/C++ Development ----------
+    gcc \
+    g++ \
+    gdb \
+    make \
+    cmake \
     \
     # ---------- Container & Network Tools ----------
-    bind9-dnsutils=1:9.18.39-0ubuntu0.24.04.2 \
+    bind9-dnsutils \
     && rm -rf /var/lib/apt/lists/*
 
 # PATH
 ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # OSLO TZ
-ENV TZ="Europe/Helsibki"
+ENV TZ="Europe/Helsinki"

@@ -1,0 +1,66 @@
+version: '3'
+
+vars:
+  CFLAGS: '-Wall -Wextra -O2 -std=c11'
+  CXXFLAGS: '-Wall -Wextra -O2 -std=c++17'
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  build:
+    desc: 'Build a C/C++ source file. Compiler chosen by course in the path (cs.120 → gcc, cs.110/111/115 → g++). Usage: task build -- <path/to/source>'
+    cmds:
+      - |
+        FILE="{{.CLI_ARGS}}"
+        if [ -z "$FILE" ]; then
+          echo "Usage: task build -- <path/to/source>"
+          exit 2
+        fi
+        if [ ! -f "$FILE" ]; then
+          echo "File not found: $FILE"
+          exit 1
+        fi
+        OUT="${FILE%.*}"
+        case "$FILE" in
+          *cs.110/*|*cs.111/*|*cs.115/*)
+            echo "==> g++ (course)"
+            g++ {{.CXXFLAGS}} -o "$OUT" "$FILE"
+            ;;
+          *cs.120/*)
+            echo "==> gcc (course)"
+            gcc {{.CFLAGS}} -o "$OUT" "$FILE"
+            ;;
+          *.cpp|*.cc|*.cxx|*.C)
+            echo "==> g++ (by extension)"
+            g++ {{.CXXFLAGS}} -o "$OUT" "$FILE"
+            ;;
+          *.c)
+            echo "==> gcc (by extension)"
+            gcc {{.CFLAGS}} -o "$OUT" "$FILE"
+            ;;
+          *)
+            echo "Cannot determine language for: $FILE"
+            exit 1
+            ;;
+        esac
+        echo "==> Built: $OUT"
+
+  build:c:
+    desc: 'Force gcc build. Usage: task build:c -- <file.c>'
+    cmds:
+      - |
+        FILE="{{.CLI_ARGS}}"
+        if [ -z "$FILE" ]; then echo "Usage: task build:c -- <file.c>"; exit 2; fi
+        gcc {{.CFLAGS}} -o "${FILE%.*}" "$FILE"
+        echo "==> Built: ${FILE%.*}"
+
+  build:cpp:
+    desc: 'Force g++ build. Usage: task build:cpp -- <file.cpp>'
+    cmds:
+      - |
+        FILE="{{.CLI_ARGS}}"
+        if [ -z "$FILE" ]; then echo "Usage: task build:cpp -- <file.cpp>"; exit 2; fi
+        g++ {{.CXXFLAGS}} -o "${FILE%.*}" "$FILE"
+        echo "==> Built: ${FILE%.*}"
