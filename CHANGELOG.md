@@ -1,3 +1,17 @@
+# [1.10.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.9.0...v1.10.0) (2026-05-24)
+
+
+### Features
+
+* Add yamllint to task lint and the devcontainer ([9b931f9](https://github.com/JPaiv/tuni-compsci-env/commit/9b931f94fa9336dacc61af8908e6c648b8fb7bb6))
+
+# [1.10.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.9.0...v1.10.0) (2026-05-24)
+
+
+### Features
+
+* Add yamllint to task lint and the devcontainer ([9b931f9](https://github.com/JPaiv/tuni-compsci-env/commit/9b931f94fa9336dacc61af8908e6c648b8fb7bb6))
+
 # [1.9.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.8.0...v1.9.0) (2026-05-24)
 
 
