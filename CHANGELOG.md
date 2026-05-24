@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.7.0...v1.8.0) (2026-05-24)
+
+
+### Features
+
+* Add Task runner, course-aware C/C++ build, and editor configs ([900072e](https://github.com/JPaiv/tuni-compsci-env/commit/900072e34bec14667a772188253e81a2fc4ed03d))
+
+# [1.8.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.7.0...v1.8.0) (2026-05-24)
+
+
+### Features
+
+* Add Task runner, course-aware C/C++ build, and editor configs ([900072e](https://github.com/JPaiv/tuni-compsci-env/commit/900072e34bec14667a772188253e81a2fc4ed03d))
+
 # [1.7.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.6.1...v1.7.0) (2026-03-14)
 
 
