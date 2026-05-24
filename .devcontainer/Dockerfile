@@ -53,6 +53,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # ---------- Python Formatters/Linters ----------
     black \
     \
+    # ---------- YAML Linter ----------
+    yamllint \
+    \
     # ---------- Container & Network Tools ----------
     bind9-dnsutils \
     && rm -rf /var/lib/apt/lists/*

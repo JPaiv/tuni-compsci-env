@@ -17,6 +17,7 @@ Includes:
   - Haskell — Ormolu (format), HLint (lint)
   - JS/TS — Prettier (format), ESLint (lint)
   - Markdown — markdownlint, Prettier
+  - YAML — Prettier (format), yamllint (lint, in editor via `fnando.linter`)
 - [Task](https://taskfile.dev) — pinned task runner with course-aware C/C++ build, plus `fmt`, `lint`, `run`, `clean`
 - Ubuntu 24 devcontainer
 
@@ -88,4 +89,5 @@ Formatter and linter configs live at the repo root and are picked up automatical
 - `.prettierrc.json` — Prettier (JS/TS/JSON/MD/YAML)
 - `eslint.config.js` — ESLint v9 flat config (JS/TS, with typescript-eslint)
 - `.hlint.yaml` — HLint rules for Haskell
+- `.yamllint` — yamllint config (100 col, document-start disabled, GH Actions friendly)
 - `.markdownlint.json` — Markdown lint

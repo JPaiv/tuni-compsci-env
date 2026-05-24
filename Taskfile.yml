@@ -120,7 +120,7 @@ tasks:
         ignore_error: true
 
   lint:
-    desc: 'Run linters across the repo (Haskell via hlint, JS/TS via eslint).'
+    desc: 'Run linters across the repo (Haskell via hlint, JS/TS via eslint, YAML via yamllint).'
     cmds:
       - cmd: |
           set -e
@@ -133,6 +133,13 @@ tasks:
             JS=$(find . -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" \) \
                   -not -path "./node_modules/*" -not -path "./dist/*" -not -path "./build/*" 2>/dev/null)
             if [ -n "$JS" ]; then echo "==> eslint"; echo "$JS" | xargs eslint; fi
+          fi
+        ignore_error: true
+      - cmd: |
+          set -e
+          if command -v yamllint >/dev/null 2>&1; then
+            echo "==> yamllint"
+            yamllint .
           fi
         ignore_error: true
 

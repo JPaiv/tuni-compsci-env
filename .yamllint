@@ -1,0 +1,23 @@
+extends: default
+
+rules:
+  line-length:
+    max: 100
+    level: warning
+  document-start: disable
+  truthy:
+    check-keys: false
+  comments:
+    min-spaces-from-content: 1
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+
+ignore: |
+  node_modules/
+  dist/
+  build/
+  .venv/
+  venv/
+  src/courses/**/student_template_project/
+  CHANGELOG.md
