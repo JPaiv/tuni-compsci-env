@@ -1,3 +1,29 @@
+# [1.9.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.8.0...v1.9.0) (2026-05-24)
+
+
+### Bug Fixes
+
+* **gitignore:** Re-ignore Python venvs and caches inside src/courses ([2f13455](https://github.com/JPaiv/tuni-compsci-env/commit/2f134554129a9146fc7f8f627e9c1ca90320f940))
+
+
+### Features
+
+* Add task run/fmt/lint/clean, JS/TS + Haskell linters and formatters ([e539351](https://github.com/JPaiv/tuni-compsci-env/commit/e5393511373401facfb060d2bcead984dddadfc5))
+* remove ([bdff4d8](https://github.com/JPaiv/tuni-compsci-env/commit/bdff4d85981b7f8f41f46b691f0d94fbd38619e8))
+
+# [1.9.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.8.0...v1.9.0) (2026-05-24)
+
+
+### Bug Fixes
+
+* **gitignore:** Re-ignore Python venvs and caches inside src/courses ([2f13455](https://github.com/JPaiv/tuni-compsci-env/commit/2f134554129a9146fc7f8f627e9c1ca90320f940))
+
+
+### Features
+
+* Add task run/fmt/lint/clean, JS/TS + Haskell linters and formatters ([e539351](https://github.com/JPaiv/tuni-compsci-env/commit/e5393511373401facfb060d2bcead984dddadfc5))
+* remove ([bdff4d8](https://github.com/JPaiv/tuni-compsci-env/commit/bdff4d85981b7f8f41f46b691f0d94fbd38619e8))
+
 # [1.8.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.7.0...v1.8.0) (2026-05-24)
 
 
