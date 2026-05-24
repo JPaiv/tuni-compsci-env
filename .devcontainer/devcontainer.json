@@ -85,6 +85,11 @@
         },
         "haskell.formattingProvider": "ormolu",
         "haskell.plugin.hlint.diagnosticsOn": true,
+        "linter.linters": {
+          "yamllint": {
+            "capabilities": ["lint"]
+          }
+        },
         "[python]": {
           "editor.defaultFormatter": "ms-python.black-formatter",
           "editor.formatOnSave": true
@@ -119,6 +124,7 @@
         "haskell.haskell", // Haskell language support and GHCi integration
         "justusadam.language-haskell", // Haskell syntax highlighting
         "dbaeumer.vscode-eslint", // ESLint integration for JS/TS
+        "fnando.linter", // Multi-linter wrapper (runs yamllint, shellcheck, etc.)
         "ms-vscode.cpptools", // C/C++ language support, debugging, IntelliSense
         "ms-python.black-formatter", // Python formatting using Black
         "ms-python.python", // Python language support
