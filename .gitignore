@@ -215,3 +215,16 @@ src/courses/**
 !src/courses/**/Makefile
 !src/courses/**/README*
 !src/courses/**/LICENSE*
+
+# Re-ignore Python virtualenvs, caches, and bytecode inside src/courses
+# (the broad !src/courses/**/ re-include above otherwise un-ignores them).
+src/courses/**/venv/
+src/courses/**/.venv/
+src/courses/**/env/
+src/courses/**/__pycache__/
+src/courses/**/.pytest_cache/
+src/courses/**/.mypy_cache/
+src/courses/**/.ruff_cache/
+src/courses/**/node_modules/
+src/courses/**/*.pyc
+src/courses/**/*.pyo
