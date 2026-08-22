@@ -211,10 +211,12 @@ __marimo__/
 # and any file that has an extension.
 courses/**
 !courses/**/
-!courses/**/*.*
-!courses/**/Makefile
+# Course tasks must not be committed (university policy). Only environment
+# files are tracked under courses/: READMEs, Python requirements, and the
+# environment smoke test.
 !courses/**/README*
-!courses/**/LICENSE*
+!courses/**/requirements*.txt
+!courses/**/check_env.py
 
 # Re-ignore Python virtualenvs, caches, and bytecode inside courses
 # (the broad !courses/**/ re-include above otherwise un-ignores them).
