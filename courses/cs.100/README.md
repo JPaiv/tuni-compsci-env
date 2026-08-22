@@ -11,7 +11,7 @@ This folder was made as the starting for the first course in Tuni computer scien
 2. Copy-paste following command to your terminal:
 
    ```
-   cd src/courses/cs.100
+   cd courses/cs.100
    ```
 
    The prompt navigates your terminal to this folder.

@@ -9,7 +9,7 @@ extend-exclude = [
   ".venv",
   "build",
   "dist",
-  "src/courses/**/student_template_project",
+  "courses/**/student_template_project",
 ]
 
 [tool.ruff.lint]

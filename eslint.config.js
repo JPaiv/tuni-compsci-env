@@ -10,7 +10,7 @@ export default [
       "dist/",
       "build/",
       ".venv/",
-      "src/courses/**/student_template_project/",
+      "courses/**/student_template_project/",
     ],
   },
   js.configs.recommended,
