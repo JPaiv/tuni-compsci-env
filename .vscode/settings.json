@@ -1,7 +1,60 @@
 {
-    "conventionalCommits.scopes": [
-        ".devcontainer",
-        "src/courses",
-        "workflows"
-    ]
+  "conventionalCommits.scopes": [".devcontainer", "courses", "workflows"],
+
+  // Course virtualenvs live inside the workspace, so Pylance would otherwise
+  // type-check third-party library source (and their bundled test suites) and
+  // report errors that are not ours. Keep analysis to our own files.
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.exclude": [
+    "**/venv/**",
+    "**/.venv/**",
+    "**/site-packages/**",
+    "**/__pycache__/**"
+  ],
+  // The course libraries (yfinance, pandas) ship no type information, so strict
+  // mode floods the Problems panel with "Type of X is unknown". Basic is the
+  // Pylance default and the right fit here.
+  "python.analysis.typeCheckingMode": "basic",
+
+  // Default interpreter for the course that has third-party imports.
+  // Other courses: Ctrl+Shift+P -> "Python: Select Interpreter".
+  "python.defaultInterpreterPath": "${workspaceFolder}/courses/data.ml.100/venv/bin/python",
+  // Course venvs are nested too deep for VS Code to auto-discover, so list the
+  // folders that contain them; they then show up in the interpreter picker.
+  "python.venvFolders": ["courses/data.ml.100", "courses/cs.100"],
+  "python.terminal.activateEnvInCurrentTerminal": true,
+
+  // The Python Environments extension (ms-python.vscode-python-envs) handles
+  // interpreter selection now, and it only searches ".venv" and "*/.venv" by
+  // default - it would never find "courses/<course>/venv". Point it at the
+  // course folders and bind each one to its own venv, so no manual picking is
+  // needed. Command, if you ever do need it: "Python: Set Project Environment".
+  "python-envs.workspaceSearchPaths": ["courses/data.ml.100/venv", "courses/cs.100/venv"],
+  "python-envs.pythonProjects": [
+    {
+      "path": "courses/data.ml.100",
+      "envManager": "ms-python.python:venv",
+      "packageManager": "ms-python.python:pip"
+    },
+    {
+      "path": "courses/cs.100",
+      "envManager": "ms-python.python:venv",
+      "packageManager": "ms-python.python:pip"
+    }
+  ],
+
+  // Keep venvs out of the file explorer, search and file watching.
+  "files.exclude": {
+    "**/venv": true,
+    "**/.venv": true,
+    "**/__pycache__": true
+  },
+  "search.exclude": {
+    "**/venv": true,
+    "**/.venv": true
+  },
+  "files.watcherExclude": {
+    "**/venv/**": true,
+    "**/.venv/**": true
+  }
 }
