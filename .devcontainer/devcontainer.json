@@ -1,5 +1,5 @@
 {
-  "name": "DevOps",
+  "name": "TuniStudent",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -94,6 +94,10 @@
           "editor.defaultFormatter": "ms-python.black-formatter",
           "editor.formatOnSave": true
         },
+        "[r]": {
+          "editor.defaultFormatter": "REditorSupport.r",
+          "editor.formatOnSave": true
+        },
         "[shellscript]": {
           "editor.formatOnSave": true,
           "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -120,6 +124,7 @@
         // ─────────────────────────────────────────────
         // Programming Languages & Formatting
         // ─────────────────────────────────────────────
+        "REditorSupport.r", // R language support (needs the languageserver R package)
         "dbaeumer.vscode-eslint", // ESLint integration for JS/TS
         "fnando.linter", // Multi-linter wrapper (runs yamllint, shellcheck, etc.)
         "foxundermoon.shell-format", // Shell script formatting (shfmt)
@@ -138,6 +143,7 @@
         // ─────────────────────────────────────────────
         // Documentation & Markdown
         // ─────────────────────────────────────────────
+        "DavidAnson.vscode-markdownlint", // Markdown linting (.markdownlint.json)
         "njpwerner.autodocstring", // Auto-generate Python docstrings
         "yzhang.markdown-all-in-one", // Markdown editing, preview, and shortcuts
         // ─────────────────────────────────────────────
@@ -167,11 +173,7 @@
       "version": "lts"
     }
   },
-  "postCreateCommand": "npm install -g prettier@3 eslint@9 typescript@5 typescript-eslint@8 @eslint/js@9",
-  "mounts": [
-    "source=/mnt/c/Users/juhop/.ssh,target=/root/.ssh,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder},target=/workspace,type=bind",
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-  ],
+  "postCreateCommand": "npm install -g prettier@3 eslint@9 typescript@5 typescript-eslint@8 @eslint/js@9 markdownlint-cli2@0",
+  "mounts": [],
   "containerEnv": {}
 }

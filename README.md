@@ -16,6 +16,8 @@ Includes:
   - C/C++ — clang-format
   - Haskell — Ormolu (format), HLint (lint)
   - JS/TS — Prettier (format), ESLint (lint)
+  - R — styler (format), lintr (lint)
+  - Shell — shfmt (format), shellcheck (lint)
   - Markdown — markdownlint, Prettier
   - YAML — Prettier (format), yamllint (lint, in editor via `fnando.linter`)
 - [Task](https://taskfile.dev) — pinned task runner with course-aware C/C++ build, plus `fmt`, `lint`, `run`, `clean`
@@ -27,6 +29,7 @@ Programming languages:
 - Haskell (ghc, cabal, stack)
 - Python 3
 - JavaScript / TypeScript (Node LTS via devcontainer feature)
+- R (r-base, with the language server for VS Code)
 
 ## 📦 Requirements
 
@@ -67,17 +70,17 @@ The repo ships a `Taskfile.yml`. The `build` target picks the compiler from the 
 
 ```bash
 task --list                                                # show all tasks
-task build     -- src/courses/cs.120/unsigned_interval.c   # auto: gcc
-task build     -- src/courses/cs.110/.../foo.cpp           # auto: g++
+task build     -- courses/cs.120/unsigned_interval.c   # auto: gcc
+task build     -- courses/cs.110/.../foo.cpp           # auto: g++
 task build:c   -- path/to/file.c                           # force gcc
 task build:cpp -- path/to/file.cpp                         # force g++
-task run       -- src/courses/cs.120/unsigned_interval.c 5 2   # build + run with args
+task run       -- courses/cs.120/unsigned_interval.c 5 2   # build + run with args
 task fmt                                                   # format Python / C / C++ / Haskell / JS / TS / JSON / MD / YAML
 task lint                                                  # lint Haskell (HLint) and JS/TS (ESLint)
-task clean                                                 # remove compiled binaries under src/courses
+task clean                                                 # remove compiled binaries under courses
 ```
 
-The output binary is placed next to the source file with the extension stripped. Compiled binaries (extensionless files under `src/courses/**`) are git-ignored.
+The output binary is placed next to the source file with the extension stripped. Compiled binaries (extensionless files under `courses/**`) are git-ignored.
 
 ## 📝 Editor configs
 

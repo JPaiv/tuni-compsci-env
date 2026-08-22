@@ -144,7 +144,7 @@ tasks:
         ignore_error: true
 
   clean:
-    desc: 'Remove compiled binaries (extensionless executable files) under src/courses.'
+    desc: 'Remove compiled binaries (extensionless executable files) under courses.'
     cmds:
       - |
-        find src/courses -type f -executable ! -name "*.*" -print -delete 2>/dev/null || true
+        find courses -type f -executable ! -name "*.*" -print -delete 2>/dev/null || true

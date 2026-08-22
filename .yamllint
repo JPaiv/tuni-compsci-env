@@ -19,5 +19,5 @@ ignore: |
   build/
   .venv/
   venv/
-  src/courses/**/student_template_project/
+  courses/**/student_template_project/
   CHANGELOG.md

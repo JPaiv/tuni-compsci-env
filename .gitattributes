@@ -1,0 +1,9 @@
+# Enforce LF in the repo regardless of host OS (matches .editorconfig / .prettierrc).
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary

@@ -1,0 +1,19 @@
+# Data & modelling
+polars==1.43.2
+pydantic==2.13.4
+
+# Market data (pulls in pandas + numpy; pyarrow is needed to hand
+# yfinance's pandas DataFrames over to polars via pl.from_pandas)
+yfinance==1.6.0
+pyarrow==25.0.1
+
+# HTTP
+requests==2.34.2
+
+# Visualisation
+altair==6.2.2
+matplotlib==3.11.1
+
+# Formatting & linting
+black==26.5.1
+ruff==0.16.4
