@@ -4,10 +4,10 @@ FROM alpine:3.23.3 AS base-builder
 # OS packages
 RUN apk update \
     && apk add --no-cache \
-    bash=5.3.3-r1 \
-    ca-certificates=20251003-r0 \
-    coreutils=9.8-r1 \
-    curl=8.17.0-r1
+    bash \
+    ca-certificates \
+    coreutils \
+    curl
 
 # Taskfile (pinned). Pure-Go static binary — same artifact runs on Alpine and Ubuntu.
 ARG TASK_VERSION=v3.51.1
@@ -56,9 +56,25 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # ---------- YAML Linter ----------
     yamllint \
     \
+    # ---------- Shell Linter ----------
+    shellcheck \
+    \
+    # ---------- R ----------
+    r-base \
+    r-base-dev \
+    r-cran-lintr \
+    \
     # ---------- Container & Network Tools ----------
     bind9-dnsutils \
     && rm -rf /var/lib/apt/lists/*
+
+# Ruff is not packaged by Ubuntu. Installed system-wide for task fmt/lint; course
+# venvs pin their own copy.
+RUN pip3 install --no-cache-dir --break-system-packages ruff
+
+# R language server (VS Code R extension) and formatter are not in apt. Builds
+# from source, which is why r-base-dev is installed above.
+RUN Rscript -e 'install.packages(c("languageserver", "styler"), repos = "https://cloud.r-project.org")'
 
 # PATH
 ENV PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
