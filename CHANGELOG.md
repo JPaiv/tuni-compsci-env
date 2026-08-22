@@ -1,3 +1,19 @@
+# [1.11.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.10.0...v1.11.0) (2026-08-22)
+
+
+### Features
+
+* **.devcontainer:** add R, shellcheck, ruff and markdownlint ([ec088ed](https://github.com/JPaiv/tuni-compsci-env/commit/ec088edbc2c2be8957c265752266a1148642e82b))
+* **courses:** add data.ml.100 Python environment ([0a26d4b](https://github.com/JPaiv/tuni-compsci-env/commit/0a26d4ba12189776f6c86f6aca0a53246297e603))
+
+# [1.11.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.10.0...v1.11.0) (2026-08-22)
+
+
+### Features
+
+* **.devcontainer:** add R, shellcheck, ruff and markdownlint ([ec088ed](https://github.com/JPaiv/tuni-compsci-env/commit/ec088edbc2c2be8957c265752266a1148642e82b))
+* **courses:** add data.ml.100 Python environment ([0a26d4b](https://github.com/JPaiv/tuni-compsci-env/commit/0a26d4ba12189776f6c86f6aca0a53246297e603))
+
 # [1.10.0](https://github.com/JPaiv/tuni-compsci-env/compare/v1.9.0...v1.10.0) (2026-05-24)
 
 
