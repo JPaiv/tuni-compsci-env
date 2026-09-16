@@ -131,7 +131,7 @@ tasks:
           set -e
           if command -v eslint >/dev/null 2>&1; then
             JS=$(find . -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" \) \
-                  -not -path "./node_modules/*" -not -path "./dist/*" -not -path "./build/*" 2>/dev/null)
+                  -not -path "*/node_modules/*" -not -path "*/dist/*" -not -path "*/build/*" 2>/dev/null)
             if [ -n "$JS" ]; then echo "==> eslint"; echo "$JS" | xargs eslint; fi
           fi
         ignore_error: true
