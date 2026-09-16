@@ -3,7 +3,8 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postStartCommand": "post-start",
+  // Runs from the workspace, so edits apply on the next attach without a rebuild
+  "postAttachCommand": "bash .devcontainer/post-attach.sh",
   "customizations": {
     "vscode": {
       "settings": {
@@ -59,6 +60,14 @@
         // Disable Git emojis for VS Code Conventional Commit extension
         "conventionalCommits.gitmoji": false,
         // Language-specific settings (moved inside settings object)
+        "[c]": {
+          "editor.defaultFormatter": "ms-vscode.cpptools",
+          "editor.formatOnSave": true
+        },
+        "[cpp]": {
+          "editor.defaultFormatter": "ms-vscode.cpptools",
+          "editor.formatOnSave": true
+        },
         "[javascript]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.formatOnSave": true
@@ -128,6 +137,9 @@
         "ms-python.black-formatter", // Python formatting using Black
         "ms-python.python", // Python language support
         "ms-vscode.cpptools", // C/C++ language support, debugging, IntelliSense
+        "ms-vscode.cpptools-extension-pack", // C/C++ pack (CMake Tools, themes, better syntax)
+        "twxs.cmake", // CMake language support
+        "cschlosser.doxdocgen", // Generate Doxygen-style C/C++ doc comments
         "redhat.vscode-yaml", // YAML language support and validation
         "tamasfe.even-better-toml", // TOML language support
         // ─────────────────────────────────────────────
@@ -169,7 +181,7 @@
   },
   "postCreateCommand": "npm install -g prettier@3 eslint@9 typescript@5 typescript-eslint@8 @eslint/js@9",
   "mounts": [
-    "source=/mnt/c/Users/juhop/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh/personal,target=/root/.ssh,type=bind,consistency=cached",
     "source=${localWorkspaceFolder},target=/workspace,type=bind",
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],

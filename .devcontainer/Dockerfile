@@ -4,10 +4,10 @@ FROM alpine:3.23.3 AS base-builder
 # OS packages
 RUN apk update \
     && apk add --no-cache \
-    bash=5.3.3-r1 \
-    ca-certificates=20251003-r0 \
-    coreutils=9.8-r1 \
-    curl=8.17.0-r1
+    bash \
+    ca-certificates \
+    coreutils \
+    curl
 
 # Taskfile (pinned). Pure-Go static binary — same artifact runs on Alpine and Ubuntu.
 ARG TASK_VERSION=v3.51.1
@@ -19,9 +19,6 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu AS runtime
 
 # Binaries
 COPY --chmod=765 --from=base-builder /usr/local/bin /usr/local/bin
-
-# Devcontainer post-start script
-COPY --chmod=755 post-start.sh /usr/local/bin/post-start
 
 # OS PACKAGE DEPENDENCIES
 # Common utils
