@@ -213,6 +213,7 @@ src/courses/**
 !src/courses/**/
 !src/courses/**/*.*
 !src/courses/**/Makefile
+!src/courses/**/Dockerfile
 !src/courses/**/README*
 !src/courses/**/LICENSE*
 
@@ -228,3 +229,16 @@ src/courses/**/.ruff_cache/
 src/courses/**/node_modules/
 src/courses/**/*.pyc
 src/courses/**/*.pyo
+
+# Re-ignore secrets and web build output inside src/courses
+# (`.env` has a dot, so the *.* re-include above would otherwise track it).
+src/courses/**/.env
+src/courses/**/.env.*
+!src/courses/**/.env.example
+src/courses/**/dist/
+src/courses/**/build/
+src/courses/**/coverage/
+
+# Course repositories cloned from course-gitlab.tuni.fi are their own git repos.
+# Ignoring them keeps `git add -A` from committing them as embedded repo pointers.
+src/courses/cs.500/
